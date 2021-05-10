@@ -4,7 +4,8 @@
 Git에서 'user.name' 및 'user.email'을 구성하라고 떠요(해결책)
 git config --local user.name 이름
 git config --local user.email 이메일
-업로드절차 1. 
+업로드절차 1. 커밋(commit) 2. 푸시(push)
+다운로드절차 1. 풀(pull) : 교실에서 작업한 결과를 집에서 이어서 작업할 상황
 
 업로드 방법 : 커밋(commit)과 푸시(push)가 깃에 올리는 방법이다. 
 다운로드 : 풀(pull) 교실에 있다가 집에서 작업물을 확인할때.
