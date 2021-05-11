@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML5실습</title>
-    <style>table, tr, th, td {border: 1px solid black; font-size: 13px;</style>
 </head>
 <body>
-
-
-    로렘 입숨(립숨)은 작업공간에 채울내용을 자동으로 생성해 주는 기능
+    <!-- 로렘 입숨(립숨)은 작업공간에 채울내용을 자동으로 생성해 주는 기능 -->
+    
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -20,35 +18,40 @@
             </tr>
         </thead>
         <tbody>
+
             <tr>
                 <td>1</td>
                 <td>여자의 근로는 특별한 보호를 받으며, 고용...</td>
                 <td>관창</td>
             </tr>
+        
             <tr>
                 <td>2</td>
                 <td>국회는 국민의 보통·평등·직접·비밀선거...</td>
                 <td>김부식</td>
             </tr>
+        
             <tr>
                 <td>3</td>
                 <td>모든 국민은 사생활의 비밀과 자유를 침해...</td>
                 <td>조통</td>
             </tr>
+        
             <tr>
                 <td>4</td>
                 <td>공개하지 아니한 회의내용의 공표에 관하여...</td>
                 <td>남효온</td>
             </tr>
+        
             <tr>
                 <td>5</td>
                 <td>탄핵소추의 의결을 받은 자는 탄핵심판이 ...</td>
                 <td>세조</td>
             </tr>
+        
         </tbody>
         </table>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus perferendis eveniet mollitia ut, nihil quaerat quidem tenetur explicabo dolorum doloremque recusandae, perspiciatis nostrum animi eos corporis! Voluptas, nulla deserunt. Laudantium!</p>
-
     <!-- html:콜론, ;세미콜론 -->
     <!-- h헤더태그 약자 : 글 제목에 표시 -->
     <!-- p태그는 문단의 약자 줄바꿈이 이루어짐 -->
@@ -61,33 +64,35 @@
     <!-- 예, 흰색: ffffff = white = 함수 rgb(255, 255, 255);
     #16진수 : 빛의 3가지 색상(3원색) 빛은 더하면 흰색으로 변함 -->
 
+    <!-- 영역지정 div : division, 가상링크 #으로 생성 -->
+    <div style="background-color: green;">
+    <a href="#">네이버</a>
+    <a href="#">다음</a>
+    </div>
+     <!-- 위가 상대경로, 밑에가 절대경로 .은 현재폴더 -->
+    <img style="width: 100%;" src="./img/flower.jpg" alt="엑박일때 표시할 내용이 여기에">
+    <img style="width: 100%;" src="/test/img/flower.jpg" alt="엑박일때 표시할 내용이 여기에">
+    <br>
+    
+    <!-- 유튜브영상 집어넣기 -->
+    <iframe width="100%" height="428" src="https://www.youtube.com/embed/BuSmlTECtvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+    
+    <!-- 리스트형 2가지 : ol(orded List 정렬된 리스트), ul(Undored List 비정렬) -->
+    <ol type="i">
+        <li>헬로 html</li>
+        <li>헬로 html</li>
+        <li>헬로 html</li>
+        <li>헬로 html</li>
+    </ol>
+    <ul>
+        <li>헬로 html</li>
+        <li>헬로 html</li>
+        <li>헬로 html</li>
+    </ul>
+
+
 </body>
-영역지정 div : division, 가상링크 #으로 생성
-<div style="background-color: green;">
-<a href="#">네이버</a>
-<a href="#">다음</a>
-</div>
-/* 위가 상대경로, 밑에가 절대경로 .은 현재폴더 */
-<img style="width: 100%;" src="./img/flower.jpg" alt="엑박일때 표시할 내용이 여기에">
-<img style="width: 100%;" src="/test/img/flower.jpg" alt="엑박일때 표시할 내용이 여기에">
-<br>
-
-/* 유튜브영상 집어넣기 */
-<iframe width="100%" height="428" src="https://www.youtube.com/embed/BuSmlTECtvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br>
-
-리스트형 2가지 : ol(orded List 정렬된 리스트), ul(Undored List 비정렬)
-<ol type="i">
-    <li>헬로 html</li>
-    <li>헬로 html</li>
-    <li>헬로 html</li>
-    <li>헬로 html</li>
-</ol>
-<ul>
-    <li>헬로 html</li>
-    <li>헬로 html</li>
-    <li>헬로 html</li>
-</ul>
 <span style="color: rgb(255, 255, 0);">헬로 html5</span>
     <span>헬로 html5</span>
     <hr>
@@ -99,11 +104,5 @@
     <h4>헬로 html</h4>
     <h5>헬로 html</h5>
     <h6>헬로 html</h6>
-
-    <!-- H2O, X2 첨자로 보이게하기 --!>
-
-
-    <p>H<sub>2</sub>O</p>
-    <p>X<sup>2</sup>=4</p>
 </body>
 </html>
