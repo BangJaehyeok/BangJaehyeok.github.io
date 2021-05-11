@@ -12,6 +12,8 @@
     - CRUD(스프링+오라클DB)
 - html 레이아웃 구조 제작
 - URL경로(path) : /루트, /test/html5.html
+- 한글 로렘 입숨 : http://guny.kr/stuff/klorem/
+- 영어 로렘 입숨 : 
 
 
 
