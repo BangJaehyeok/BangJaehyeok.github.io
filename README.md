@@ -11,10 +11,9 @@
     - 디버그방법(자바스크립트 ~ 스프링)
     - CRUD(스프링+오라클DB)
 - html 레이아웃 구조 제작
-- URL경로(path) : /루트, /test/html5.html
-- 한글 로렘 입숨 : http://guny.kr/stuff/klorem/
-- 영어 로렘 입숨 : 
-
+- 로렘 입숨 한글URL: http://guny.kr/stuff/klorem/#/dl-html
+- 로렘 입숨 영어URL: https://loremipsum.io/generator/
+- URL경로(path): /루트, /test/html5.html
 
 
 ##### 20210510(월) 작업내역
