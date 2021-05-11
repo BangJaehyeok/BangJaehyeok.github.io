@@ -11,6 +11,7 @@
     - 디버그방법(자바스크립트 ~ 스프링)
     - CRUD(스프링+오라클DB)
 - html 레이아웃 구조 제작
+- URL경로(path) : /루트, /test/html5.html
 
 
 
