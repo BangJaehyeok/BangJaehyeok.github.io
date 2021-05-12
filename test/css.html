@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
+<!-- ctrl+클릭 하면 이동할 수 있다 -->
 
 <style>
    /* 03번 선택자 종류 - 자바스크립트에서도 똑같이 이용함
@@ -22,9 +23,7 @@
         스타일은 제일 마지막에 쓰는게 적용됨. 위에서부터 해석하는 방식 : 인터프리터형 = 자바스크립트도 인터프리터형 언어
    */
    h1 { background-color: skyblue; }
-   div * {
-       color: green;
-    }
+   /* div * {color: green; } */
     .box-one, .box-two { background-color: tomato;}
     #box-four, #box-five { background-color: yellow;}
     .box-one p:after { content: ' +addadd';}
@@ -62,9 +61,10 @@
         margin: 0px;
         position: fixed;  
         /* absolute = 자리가 다른 태그와 관련없게 위치를 가짐(절대위치)
-           fixed = 내가 보는 화면의 절대적위치에 고정되어 스크롤내려도 그자리에 고정됨 */
+           fixed = 내가 보는 화면의 절대적위치에 고정되어 스크롤내려도 그자리에 고정됨 - 상단고정메뉴(구글은 absolute) */
         margin-top: 20px;
         margin-left: 20px;
+        /* position: relative; */
         
     }
     .box-two {
@@ -80,7 +80,8 @@
 </head>
 <body>
     <h1>헬로 css</h1>
-    <div class="box-one"><p style="color: white;"><a href=""></a> 상단으로 이동</p></div>
+    <div class="box-one"><p style="color: white;">
+        <a href="#">상단으로 이동</a> </p></div>
     <div class="box-two"><a href="#">two two two</a></div>
     <div class="box-three">three</div>
     <div id="box-four">four</div>
