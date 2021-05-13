@@ -1,3 +1,17 @@
+### 20210513(목) 작업내역
+- html5.html, css.html, js.html 학습완료
+- jQuery 기본구조 실습함.
+- 애니데스크 - 팀뷰어 대신 사용
+- jQuery 미처리 작업은 다음주에. 오늘부터는 모바일 메인페이지 1개 만들고 과제물로 제출 - 프로그램 입히는 소스로 사용하게됨.
+- jQuery 코어 다운받기 : min버전(압축-속도up), 일반버전(개발버전-속도normal)
+
+### jQuery JSON 데이터 파싱 
+- 외부 data.js 파일에서 json데이터를 저장한 후 html에 불러와서 파싱
+- 외부 사이트에서 제공하는(RestAIP서버) json데이터를 html에서 불러와서 파싱.
+- RestAPI서버 중 코로나19 확진자 데이터를 받아서 html에서 파싱(데이터를 분해해서 화면에 뿌려주는것)
+- RestAIP서버 주소(빅데이터) : https://coroname.me/getdata
+
+
 #### 20210512(수) 작업내역
 - git clone으로 프로젝트를 가져온 경우 아래 내용을 추가해줘야함
 - git config --list 확인에서 user.name, user.email 없으면 아래추가.
