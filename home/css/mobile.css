@@ -23,18 +23,14 @@ a {text-decoration: none;} /* 링크의 밑줄이 사라지는 효과 */
     content: '';
     clear: both; /* 태그의 위치를 지정하는 float:left|right 속성값을 초기화시킴 */
     display: block; /* float는 블럭 속성이 없어지는 것. 없어진것을 clear시키면 다시 block 속성을 부여함. */
-
+    
 }
 
 
 /* //공통영역 */
 
 /* 부트스트랩 CSS 수정 */
-.clear::after {
-    content: '';
-    clear: both; /* 태그의 위치를 지정하는 float:left|right 속성값을 초기화시킴 */
-    display: block; /* float는 블럭 속성이 없어지는 것. 없어진것을 clear시키면 다시 block 속성을 부여함. */
-}
+
 .txt_right {
     text-align: right !important; /* 약자임 */
 }
