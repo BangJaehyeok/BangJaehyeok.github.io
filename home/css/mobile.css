@@ -1,0 +1,56 @@
+@charset "UTP-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+/* 모바일용 메인페이지 스타일 지정 시작 */
+/* 공통영역 */
+body {
+    /* body태그만 적용. a태그엔 적용 안됨 */
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 16px !important;
+    font-size: 8px;
+    /* important는 중요함, 다른 폰트css는 무시, body 폰트크기는 16px로 무조건 고정 */
+    letter-spacing: -1px !important; /* 글자간격 */
+    color: #444 !important;
+    word-wrap: break-word !important;  /* 워드랩, 줄바꿈할때 단어가 잘리지 않고 1개 단위로 줄바꿈됨. */
+    line-height: 1 !important; /* 단위가 1이면 기본 16px로 적용 */ 
+}
+dl, ol, ul {margin-bottom: 0 !important;}
+#container a:hover {color: black !important;} /* : 가상선택자, :: 가상요소 */
+a:link {color: #444;}
+a:hover {color: white !important;}
+a:visited {color: #444;}
+a {text-decoration: none;} /* 링크의 밑줄이 사라지는 효과 */
+.clear::after {
+    content: '';
+    clear: both; /* 태그의 위치를 지정하는 float:left|right 속성값을 초기화시킴 */
+    display: block; /* float는 블럭 속성이 없어지는 것. 없어진것을 clear시키면 다시 block 속성을 부여함. */
+
+}
+.txt_right {
+    text-align: right !important; /* 약자임 */
+}
+.mt20 {margin-top: 20px;} /* mt 네이밍은 부트스트랩과 동일 */
+.w100p {
+    width: 100% !important; /* 너비크기 100%라는 약자 */
+}
+
+/* //공통영역 */
+
+/* 헤더영역 */
+.on { /* 클래스 선택자 */
+    background: #32353d;
+}
+header { /* 태그 선택자 */
+    height: 90px;
+    text-align: center;
+    z-index: 200; /* z의 순서 : x(가로축), y(세로축), z(위쪽높이,공간) */
+    /* z-index:0은 제일 아래 이미지겹치기할때 제일 아래에 있음 높을수록 위에 배치됨. 값을 200주는 이유는 슬라이드 이미지 겹칠때 메뉴가 다른 태그에 가려지지는걸 방지*/
+    background: rgba(0, 0, 0, 0.5);
+    /* a는 알파값 : 투명도 크기 1=100%, 0.5=50% */
+    position: absolute; /* relative는 다른태그와 관계됨(기본값), absolute는 다른태그에 영향을 받지 않음 */
+    left: 0; top: 0;
+    width: 100%;
+}
+.box_inner {
+    width: 100%; margin: 0 auto;
+}
+/* //헤더영역 */

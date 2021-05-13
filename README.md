@@ -7,6 +7,10 @@
 - 작업폴더를 나누는 이유 : 관공서, 대학, 기업체의 웹프로그램(사이트)를 제작하게됨. 제작할 때, 1년간 무상 유지보수 이후 비용이 책정
 - home폴더 기존작업물, 리뉴얼할때 기존폴더 home에 덮어쓰는 방식이 아님.
 - 리뉴얼할 때 home2022 폴더를 새로 만들어 작업하게된다.
+- 픽사베이에서 받은 이미지 3개 : 로고1, 슬라이드 이미지1, No Image 1 받고, 경로 적어놓기
+- 로고 : https://pixabay.com/ko/vectors/%EB%A1%9C%EA%B3%A0-%EB%B0%B4%EB%93%9C-%EB%94%94%EC%9E%90%EC%9D%B8-2078018/
+- 슬라이드 이미지 : https://pixabay.com/ko/photos/%EB%B2%9A%EA%BD%83-%EC%B2%B4%EB%A6%AC-%EC%9D%BC%EB%B3%B8%EC%96%B4-%EB%83%84%EC%83%88-%EA%BD%83-1260641/
+- No Image : https://pixabay.com/ko/vectors/%ED%81%AC%EB%A1%9C%EC%8A%A4-%EB%B2%84%ED%8A%BC-%EB%85%B9%EC%83%89-%ED%99%94%EC%9D%B4%ED%8A%B8-44529/
 
 ### jQuery JSON 데이터 파싱 
 - 외부 data.js 파일에서 json데이터를 저장한 후 html에 불러와서 파싱
