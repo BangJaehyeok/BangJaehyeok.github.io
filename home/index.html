@@ -16,114 +16,164 @@
 <link rel="stylesheet" href="/home/css/mobile.css">
 <style>
 /* 모바일용 메인페이지 스타일 지정(아래) */
-/* 상단메뉴영역 */
-.openMOgnb {
-    /* gnb:글로벌 네비게이션 바 메뉴명칭으로 사용 */
+
+/* 본문 컨테이너 영역 */
+#container, footer, .hdd, .quick_area {
+    text-align: center;
+}
+#container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 30px;
+}
+/* 슬라이드영역 */
+.main_rolling_pc {
     display: block;
+}
+.visualRoll {
+    position: relative;
+    width: 100%;
+}
+.viewImgList {
+    position: relative;
+    width: 100%;
+}
+ul.viewImgList li {/* ul.클래스명 : ul태그 중 클래스명이 viewImgList 영역 */
+    text-align: center;
+    height: 300px;
+    line-height: 550px;
+    background-size: cover;/* 배경이미지의 크기를 꽉 채우는 값 cover */
+    width: 100%;
+}
+.roll_content a img {
+    display: none;
+}
+li.imglist0 {
+    position: relative;
+    z-index: 50;
+    background: url(./img/slide1.jpg) no-repeat;
+}
+li.imglist1 {
     position: absolute;
-    left: 15px;
-    top: 35px;
-    width: 25px;
-    height: 16px;
+    z-index: 10;
+    left: 0px; top: 0px;
+    background: url(./img/slide2.jpg) no-repeat;
 }
-.hdd {
-    text-indent: -9999px;
+li.imglist2 {
     position: absolute;
+    z-index: 10;
+    left: 0px; top: 0px;
+    background: url(./img/slide1.jpg) no-repeat;
 }
-.openMOgnb span {
-    box-sizing: border-box; /* 박스크기를 테두리까지 크기로 고정 */
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin-bottom: 3px;
-    border-radius: 10px; /* 테두리 라운드 처리 */
-    background-color: white;
+.roll_content {
+    position: static;
 }
-.openMOgnb span:first-of-type + span {width: 17px;} /* + 형제 인접연산자 */
-.openMOgnb span:last-child {
-    /* width: 25px;  */
-    margin-bottom: 0px;
+.roll_content .roll_txtline {
+    position: absolute;
+    left: 0px;
+    bottom: 60px;/*roll_content하단에서 60px만큼 위에 위치*/
+    width: 100%;
+    line-height: 1;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    letter-spacing: 2px;
 }
-.header_cont {
+.rollbtnArea {
+    position: absolute; /* 위치를 기준위치로 고정 */
+    width: 100%;
+    left: 0px;
+    bottom: 25px;
+    z-index: 200;
+}
+.rollingbtn {
+    width: 320px;
+    margin: 0 auto;/* 버튼영역에 5개 들어가고, 가운데 정렬 */
+    text-align: center;
+}
+.rollingbtn li.butt0 {
+    margin-left: 10px;
+}
+.rollingbtn li {
+    display: inline-block;
+    margin-left: 5px;
+}
+.rollingbtn li a {
+    vertical-align: top;/* img하고 다른태그 사용시 다른 태그의 세로정렬 */
+}
+/* //슬라이드영역 */
+/* 갤러리 최근게시물영역 */
+.about_area h2 {
+    font-size: 20px;
+    padding: 27px 0 25px; /*27=상하 0좌 25우*/
+}
+.about_area h2 b {
+    display: block; /*한개 라인 영역 모두 차지*/
+    padding-top: 10px;
+}
+.about_box {
+    background: #fff;
+}
+.place_list li {
     float: none;
     width: 100%;
-    background: #31343d;
-    margin-top: 36px;
-    /* display: none; */
-}
-.closePop {
-    display: block;
-    position: absolute;
-    right: 0px;
-    top: 15px;
-}
-.closePop a {
-    display: block;
-    width: 60px; height: 60px;
-    text-indent: -9999px;
-    overflow: hidden;
-    background: url(./img/btn_closeMenu.png) no-repeat;
-    background-size: 60px;
-}
-.util {padding: 20px;}
-.header_cont a {
-    color: white; font-size: 16px;
-}
-.util li {float: left;}
-.util li::after {
-    /* ::가상요소를 추가 */
-    content: '|';
-    display: inline-block;
-    padding: 0 10px;
-    color: #a2a2a3;
-    font-size: 10px;
-    position: relative;
-    top: -2px;
-}
-.util li:last-child::after {
-    /* 가상선택자 마지막 li태그에서 가성요소 추가 */
-    content: '';
-    display: none;
-}
-.gnb {
-    float: none;
+    margin: 0px;
     box-sizing: border-box;
-    padding-top: 0px;
-    height: auto;
-    border-top: 1px solid #83868b;
+    padding: 0 20px;
 }
-.gnb li {/* gnb안쪽의 li 태그 */
-    float: left;
-    width: 50%;
+.place_list li img {
+    width: 100%;/*가로크기를 반응형으로 만드는 방법 %로 표시*/
+}
+.place_list li h3 {
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 25px;
+}
+.place_list p.txt {
+    padding: 10px 50px 30px;
+    line-height: 1.4;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    word-break: keep-all; /*줄바꿈을 하지 않겠다.*/
+    color: #666;
+}
+.place_list li .view {
+    padding-bottom: 10px;
+    margin: 0 0 30px;
+    display: inline-block;
+    padding-top: 5px;
+    border-top: 2px solid #333;
+    color: #666;
+}
+
+/* //갤러리 최근게시물영역 */
+
+/* 공지사항 최근게시물영역 */
+.app_line {display: none;} /*태블릿,PC전용 전용컨텐츠라 가려놓음*/
+.appbbs_area {
+    padding: 0px 20px;
     text-align: left;
-    box-sizing: border-box; /*width가 50%면 50%안쪽에 테두리까지 포함*/
-    border-bottom: 1px solid #83868b;
 }
-.gnb li a {/* gnb안쪽의 li 안쪽의 a태그 */
-    display: block;
-    padding: 0 0 0 65px;
-    height: 60px;
-    line-height: 60px;
-    background: url(./img/ico_gnb01.png) no-repeat 10px center;/* 10px 가로위치 세로는 가운데정렬*/
-    background-size: 49px 56px;
+.bbs_line {
+    float: none;
+    width: 100%;
+    padding: 20px 0px;
+    border-top: 1px solid #d6d7d8;
 }
-.gnb_depth { /*2차(서브) 메뉴*/
-    display: none;
+.bbs_line h3 {
+    font-weight: bold;
+    font-size: 19px;
 }
-.gnb li + li a {/*1차대메뉴의 li태그 중 2번째 영역 */
-    background-image: url(./img/ico_gnb02.png);
+.bbs_line .notice_recent {
+    padding-top: 10px;
 }
-.gnb li + li + li a {/*1차대메뉴의 li태그 중 3번째 영역 */
-    background-image: url(./img/ico_gnb02.png);
+.bbs_line .notice_recent li {
+    padding: 8px 0;
 }
-.gnb li + li + li + li a {/*1차대메뉴의 li태그 중 4번째 영역 */
-    background-image: url(./img/ico_gnb02.png);
-}
-.gnb li:nth-child(2n+1) {
-    /* 2n+1 홀수번째의 li태그를 말함 */
-    border-right: 1px solid #83868b;
-}
-/* //상단메뉴영역 */
+
+/* //공지사항 최근게시물영역 */
+/* //본문 컨테이너 영역 */
 </style>
 <script>
 $(document).ready(function() {
@@ -215,11 +265,11 @@ $(document).ready(function() {
                 <!-- 슬라이드버튼영역 -->
                 <div class="rollbtnArea">
                     <ul class="rollingbtn">
-                        <li class="seq butt0"><a href="#butt"><img src="img/btn_rollbutt_on.png" alt="1번" /></a></li>
-                        <li class="seq butt1"><a href="#butt"><img src="img/btn_rollbutt_off.png" alt="2번" /></a></li>
-                        <li class="seq butt2"><a href="#butt"><img src="img/btn_rollbutt_off.png" alt="3번" /></a></li>
-                        <li class="rollstop"><a href="#" class="stop"><img src="img/btn_roll_stop.png" alt="멈춤" /></a></li>
-                        <li class="rollplay"><a href="#" class="play"><img src="img/btn_roll_play.png" alt="재생" /></a></li>
+                        <li class="seq butt0"><a href="#butt"><img src="./img/btn_rollbutt_on.png" alt="1번" /></a></li>
+                        <li class="seq butt1"><a href="#butt"><img src="./img/btn_rollbutt_off.png" alt="2번" /></a></li>
+                        <li class="seq butt2"><a href="#butt"><img src="./img/btn_rollbutt_off.png" alt="3번" /></a></li>
+                        <li class="rollstop"><a href="#" class="stop"><img src="./img/btn_roll_stop.png" alt="멈춤" /></a></li>
+                        <li class="rollplay"><a href="#" class="play"><img src="./img/btn_roll_play.png" alt="재생" /></a></li>
                     </ul>
                 </div>
                 <!-- //슬라이드버튼영역 -->
@@ -229,7 +279,7 @@ $(document).ready(function() {
 	
 		<!-- 갤러리최근게시물영역 -->
 		<div class="about_area">
-			<h2>겔러리 최근 게시물 <b>TOP 3</b></h2>
+			<h2>갤러리 최근 게시물 <b>TOP 3</b></h2>
 			<div class="about_box">
 				<ul class="place_list box_inner clear">
 					<li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.contact_pop').show();">
