@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- 제이쿼리 코어 임포트(아래) -->
+<!-- 제이쿼리 코어 임포트(아래) 어느 페이지든 항상 있어야하는 코어 -->
 <script src="/home/js/jquery-3.6.0.js"></script>
 <!-- 상단 바로가기 링크시 부드럽게 상단으로 이동하는 외부 라이브러리 js임포트(아래) -->
 <script src="/home/js/jquery.smooth-scroll.min.js"></script>
@@ -13,14 +13,16 @@
 <!-- 크롬, IE, 파폭, 사파리 등 h1, p, ul, div 태그의 크기가 조금씩 다르다 -->
 <!-- 작업한 결과가 모든 브라우저(크로싱브라우징)에 똑같이 보이게 하기 위한 reset.css -->
 <link rel="stylesheet" href="/home/css/reset.css">
+<!-- 여기서부터 사용자 정의형 스타일 + 스크립트 추가(아래) -->
 <link rel="stylesheet" href="/home/css/mobile.css">
+<script src="/home/js/main.js"></script>
 <style>
 /* 태블릿용 메인페이지 스타일 지정(아래) */
 
 </style>
 <script>
 $(document).ready(function() {
-	$('.to_top a').smoothScroll();
+	
 });
 </script>
 </head>
