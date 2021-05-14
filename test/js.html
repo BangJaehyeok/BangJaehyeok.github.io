@@ -12,7 +12,7 @@
             border-collapse: collapse;
             width: 100%;
         }
-        th{ width: 25%;}
+        th{width: 25%;}
     </style>
     <!-- jQuery 코어 임포트 불러오기 -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -26,7 +26,13 @@
             // jsonData 1개씩 뽑아서 화면에 table>tr>td에 출력하게 한다.
             // append는 가상선택자의 after와 같다. 기준영역의 다음을 말한다.
             $('#board tbody').append('<tr>');
+            $('#board tbody').append('<td style="text-align:center;">'+(i+1)+'</td>');
+            $('#board tbody').append('<td>'+jsonData[i]['_id']+'</td>');
+            $('#board tbody').append('<td>'+jsonData[i]['age']+'</td>');
+            $('#board tbody').append('<td>'+jsonData[i]['eyeColor']+'</td>');
+            $('#board tbody').append('<td>'+jsonData[i]['name']+'</td>');            
             $('#board tbody').append('</tr>');
+            //난잡한 데이터를 보기좋게 정렬,배치하는 것을 파싱한다고 함.
             }
                        
         })
@@ -52,6 +58,7 @@
 <body>
     <table id="board">
         <tr>
+            <th>No</th>
             <th>id</th>
             <th>age</th>
             <th>eyeColor</th>
@@ -71,7 +78,6 @@
     
     <script>
         
-
         //여러개의 element 선택
         // var names = document.getElementById('name');
         var names = $('#name');
