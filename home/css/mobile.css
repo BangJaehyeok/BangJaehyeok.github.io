@@ -347,3 +347,98 @@ li.imglist2 {
 
 /* //공지사항 최근게시물영역 */
 /* //본문 컨테이너 영역 */
+
+/* 푸터스타일 지정 */
+footer {
+	border-top: 1px solid #ddd;
+}
+.foot_area { /* 모바일에서는 큰 의미없는 명령어. PC, 태블릿에서는 유효 */
+	box-sizing: border-box;
+	padding: 0 20px 90px;
+	position: relative; /*relative가 있다는 것은 foot_area 안쪽에 태그의 기준으로 사용한다는 뜻*/
+}
+.foot_list {
+	padding-top: 25px;
+}
+.foot_list li {
+	float: left; /* 세로배치되는 컨텐츠를 가로로 배치하는 것 */
+}
+.foot_list li:first-child::after {
+	content: '|';
+	display: inline-block;
+	padding: 0 10px;
+	font-size: 10px;
+	position: relative;
+	top: -2px;
+}
+.foot_list li a {
+	font-weight: bold;
+	font-size: 15px;
+}
+.foot_list li a:hover {color: black !important;}
+.foot_area h2 {
+	padding-top: 15px;
+	font-size: 14px;/*px:pixel 픽셀 html의 크기단위, em, rem(root em)*/
+	color: #666;
+}
+.addr {
+	line-height: 1.3;/* 줄간격 기존크기의 1.3배 */
+	font-size: 14px;
+	color: #767676;
+	padding-top: 5px;
+}
+.br_line  {
+	display: block; /* 블럭영역은 1줄 모두 차지 줄바꿈 = 엔터효과 */
+}
+.copy {
+	padding: 3px 0px 20px;
+	font-size: 14px;
+	color: #767676;
+}
+.snslink {
+	position: relative; /* 다른 태그를 기준으로 static = 고정값, relative = 상대값*/
+	width: 210px;
+	margin: 10px auto;/* 10px : 상하여백, auto : 좌우여백, 좌우가운데정렬*/
+}
+.snslink li:first-child { /*li태그 중 첫번째 li 태그*/
+	margin-left: 0px;
+}
+.snslink li {
+	margin-left: 30px;
+	float: left;
+}
+.snslink li a {
+	display: block;
+	width: 50px;
+	height: 74px;
+	text-indent: -9999px; /*들여쓰기 : -9999해서 글자를 숨김 : 웹접근성때문에 시각장애인용 처리*/
+	background: url(../img/ico_blog_r.png) no-repeat;
+	overflow: hidden;
+}
+.snslink li + li a { /* 인접(형제)연산자, sibling */
+	background-image: url(../img/ico_facebook_r.png);
+}
+.snslink li + li + li a {
+	background-image: url(../img/ico_instargram_r.png);
+}
+/* 퀵메뉴영역 */
+.to_top {
+	position: fixed;/* 붙박이 위치 고정, 마우스를 스크롤해도 항상 그자리 고정 */
+	right: 20px;
+	bottom: 100px;
+	text-align: center;
+	background: none;
+	z-index: 100; /* 슬라이드이미지는 200. 그보단 아래. 겹치면 top버튼이 안보임 */
+}
+.to_top a {
+	display: block;
+	width: 45px;
+	height: 45px;
+	background: url(../img/ico_totop_mo.png) no-repeat center;
+	background-size: 45px;
+	text-indent: -9999px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+/* //퀵메뉴영역 */
+/* //푸터스타일 지정 */
