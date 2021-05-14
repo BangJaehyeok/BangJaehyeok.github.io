@@ -26,6 +26,7 @@
 - CSS유효성검사: https://validator.w3.org/unicorn/?ucn_lang=ko
 - 검사기준 : CSS3, HTML5
 - 과제물 양식 : https://drive.google.com/file/d/1Q0d5tcDJEmJLUfDbjDKn--Xh4QOfLuy_/view
+- json generator => json 데이터를 조건 하에 임의(무작위)로 만들어낼 수 있다.
 
 ### 20210513(목) 작업내역
 - html5.html, css.html, js.html 학습완료
