@@ -1,8 +1,30 @@
+### (작업예정)jQuery JSON 데이터 파싱 
+- 외부 data.js 파일에서 json데이터를 저장한 후 html에 불러와서 파싱
+- 외부 사이트에서 제공하는(RestAIP서버) json데이터를 html에서 불러와서 파싱.
+- RestAPI서버 중 코로나19 확진자 데이터를 받아서 html에서 파싱(데이터를 분해해서 화면에 뿌려주는것)
+- RestAIP서버 주소(빅데이터) : https://coroname.me/getdata
+
+#### 20210517(월) 작업예정
+- 메인페이지에 자바스크립트(jQuery) 적용 (VS code + HTML5 + CSS + jQuery)
+- 제이쿼리 적용 부분 : 메뉴, 슬라이드이미지 3개 처리 : 모바일 메인페이지 마무리
+- 태블릿 메인 CSS 스타일 처리, PC용 메인 CSS 스타일 처리
+- 모바일 서브페이지 CSS 스타일 처리
+- 태블릿 + PC용 CSS 스타일 처리
+- 모바일용 게시판페이지(CRUD) CSS 스타일 처리
+- 태블릿 + PC용 CSS 스타일 처리
+- 모바일+태블릿+PC 댓글시스템 CSS+제이쿼리+부트스트랩 처리
+- AdminLTE(부트스트랩기반템플릿-반응형)를 이용해서 관리자단 디자인 만들기
+- UI 디자인 마무리
+- UI 구현 시작 ========= 스프링프로젝트 시작(자바+이클립스+오라클), 위에서 제작한 UI디자인을 이용해서 프로그램을 입히게된다. 
+
 #### 20210514(금) 작업내역
 - 사용자 모바일 메인페이지 footer영역(이용약관, 개인정보취급 등등) cSS입히기
 - 과제물 제출 준비
 - 메인페이지에 자바스크립트(제이쿼리) 적용. 메뉴, 슬라이드이미지처리, top상단이동
-
+- HTML유효성검사: https://validator.w3.org/
+- CSS유효성검사: https://validator.w3.org/unicorn/?ucn_lang=ko
+- 검사기준 : CSS3, HTML5
+- 과제물 양식 : https://drive.google.com/file/d/1Q0d5tcDJEmJLUfDbjDKn--Xh4QOfLuy_/view
 
 ### 20210513(목) 작업내역
 - html5.html, css.html, js.html 학습완료
@@ -18,11 +40,7 @@
 - 슬라이드 이미지 : https://pixabay.com/ko/photos/%EB%B2%9A%EA%BD%83-%EC%B2%B4%EB%A6%AC-%EC%9D%BC%EB%B3%B8%EC%96%B4-%EB%83%84%EC%83%88-%EA%BD%83-1260641/
 - No Image : https://pixabay.com/ko/vectors/%ED%81%AC%EB%A1%9C%EC%8A%A4-%EB%B2%84%ED%8A%BC-%EB%85%B9%EC%83%89-%ED%99%94%EC%9D%B4%ED%8A%B8-44529/
 
-### jQuery JSON 데이터 파싱 
-- 외부 data.js 파일에서 json데이터를 저장한 후 html에 불러와서 파싱
-- 외부 사이트에서 제공하는(RestAIP서버) json데이터를 html에서 불러와서 파싱.
-- RestAPI서버 중 코로나19 확진자 데이터를 받아서 html에서 파싱(데이터를 분해해서 화면에 뿌려주는것)
-- RestAIP서버 주소(빅데이터) : https://coroname.me/getdata
+
 
 
 #### 20210512(수) 작업내역
