@@ -18,10 +18,58 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="./json.js"></script>
     <script>
+        $(document).ready(function() {
+        // RestAPI 제공하는 곳 : 공공데이터포럼, 네이버, 구글, 인스타그램, 카카오, 페북 등
+        // RestAPI 서버에서 받은 빅데이터(코로나19 확진자 위치와 확진장소,발생일시)를 파싱(아래)
+        // $.ajax({}); <-형식 Asyncronous Javascript and Xml 비동기 자바스크립트와 XML통신
+        // XML 대신에 json 데이터를 사용한다.
+        // 비동기(추가) vs 동기(기본)
+        // 동기:(웹프로그램은 기본 = 옛날에는 동영상 재생시, 100메가 avi모두 다운로드 이후 재생) 위와같은 상황에서는 다중작업이 안됨. 이것을 방지하는 것이 비동기 방식.
+        // $.ajax 함수로 비동기테이터(Xml => json) 전송을 사용함. 
+        $.ajax({
+            type:'get',//get(검색),post(보안필요:입력, 수정, 삭제)
+            url:'https://coroname.me/getdata',//RestAPI서버의 URL주소
+            dataType:'json',//RestAPI서버에서 전송받은 데이터 형식을 명시, json, text 등
+            success:function(result) {
+                // var jsonData = JSON.parse(result);
+                var jsonData = result.data;//data 키의 값을 반환함.
+                console.log(jsonData); //result에는 url에서 datatype형식으로 받은 자료가 저장됨
+                var i = 0;
+            for(var jsonOne of jsonData) {
+                i = i + 1;
+                $('#board #tbody').append('<tr>');
+                $('#board #tbody').append('<td style="text-align:center;">'+(i)+'</td>');
+                $('#board #tbody').append('<td style="background-color:pink">'+jsonOne.place+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.latlng+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.createDate+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.region+'</td>');
+                $('#board #tbody').append('</tr>');    
+            }
+            },
+            error:function() {
+                alert('RestAPI 서버에 문제가 발생했습니다. \n 나중에 이용해주세요!');
+            } //url Rest서버가 정전, 프로그램에러일때, 처리할 내용 명시.
+            });
+        });
+
         // 외부 js파일의 json 데이터를 body 태그안의 #board 내부에 파싱합니다.
         console.log(jsonData);
         // json 데이터를 파싱해서 #board 영역에 동적으로 출력
         $(document).ready(function(){
+            //스프링에서 JSP(java)방식에서 파싱하는 방법(아래) 제일많이씀
+            //향상된 for반복문으로 파싱
+            var i = 0;
+            for(var jsonOne of jsonData) {
+                i = i + 1;
+                $('#board #tbody').append('<tr>');
+                $('#board #tbody').append('<td style="text-align:center;">'+(i)+'</td>');
+                $('#board #tbody').append('<td style="background-color:pink">'+jsonOne._id+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.age+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.eyecolor+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.name+'</td>');
+                $('#board #tbody').append('</tr>');    
+            }
+
             //JQuery에서 파싱하는 방법(아래)
             // $.each(json(원본)데이터object, 콜백함수function(index, jsonOne){}); 제이쿼리는 $로시작.
             $.each(jsonData, function(index, jsonOne){//이미 jsonOne은 한개의 레코드값. 레코드 = 필드들(_id, age, eyecolor 등)로 구성된 데이터
