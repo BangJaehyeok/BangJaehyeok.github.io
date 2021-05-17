@@ -22,16 +22,31 @@
         console.log(jsonData);
         // json 데이터를 파싱해서 #board 영역에 동적으로 출력
         $(document).ready(function(){
+            //JQuery에서 파싱하는 방법(아래)
+            // $.each(json(원본)데이터object, 콜백함수function(index, jsonOne){}); 제이쿼리는 $로시작.
+            $.each(jsonData, function(index, jsonOne){//이미 jsonOne은 한개의 레코드값. 레코드 = 필드들(_id, age, eyecolor 등)로 구성된 데이터
+                if(index == 10) {return false;} //each 반복문을 중단시키는 명령
+                $('#board #tbody').append('<tr>');
+                $('#board #tbody').append('<td style="text-align:center;">'+(index+1)+'</td>');
+                $('#board #tbody').append('<td style="background-color:skyblue">'+jsonOne._id+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.age+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.eyecolor+'</td>');
+                $('#board #tbody').append('<td>'+jsonOne.name+'</td>');
+                $('#board #tbody').append('</tr>');
+            })
+
+            //오리지날 JS에서 파싱하는 방법
             for(var i=0;i<jsonData.length;i++) {
+                if(i==10) {break;} //반복문을 중단하는 영역
             // jsonData 1개씩 뽑아서 화면에 table>tr>td에 출력하게 한다.
             // append는 가상선택자의 after와 같다. 기준영역의 다음을 말한다.
-            $('#board tbody').append('<tr>');
-            $('#board tbody').append('<td style="text-align:center;">'+(i+1)+'</td>');
-            $('#board tbody').append('<td>'+jsonData[i]['_id']+'</td>');
-            $('#board tbody').append('<td>'+jsonData[i]['age']+'</td>');
-            $('#board tbody').append('<td>'+jsonData[i]['eyeColor']+'</td>');
-            $('#board tbody').append('<td>'+jsonData[i]['name']+'</td>');            
-            $('#board tbody').append('</tr>');
+            $('#board #tbody').append('<tr>');
+            $('#board #tbody').append('<td style="text-align:center;">'+(i+1)+'</td>');
+            $('#board #tbody').append('<td style="background-color:yellow">'+jsonData[i]['_id']+'</td>');
+            $('#board #tbody').append('<td>'+jsonData[i]['age']+'</td>');
+            $('#board #tbody').append('<td>'+jsonData[i]['eyeColor']+'</td>');
+            $('#board #tbody').append('<td>'+jsonData[i]['name']+'</td>');            
+            $('#board #tbody').append('</tr>');
             //난잡한 데이터를 보기좋게 정렬,배치하는 것을 파싱한다고 함.
             }
                        
@@ -63,8 +78,9 @@
             <th>age</th>
             <th>eyeColor</th>
             <th>name</th>
-            <tbody></tbody>
         </tr>
+        <tbody id="tbody"></tbody> 
+        <!-- tbody는 tr의 바깥쪽에 있어야함, 태그선택자를 아이디선택자로 바꿈 -->
     </table>
     <div id="one">헬로 자바스크립트
     </div>
