@@ -222,7 +222,7 @@ ul.viewImgList li {/* ul.클래스명 : ul태그 중 클래스명이 viewImgList
     display: none;
 }
 li.imglist0 {
-    position: relative;
+    position: relative; /* 슬라이드 기준위치 */
     z-index: 50;
     background: url(../img/slide1.jpg) no-repeat;
 }
@@ -236,7 +236,13 @@ li.imglist2 {
     position: absolute;
     z-index: 10;
     left: 0px; top: 0px;
-    background: url(../img/slide1.jpg) no-repeat;
+    background: url(../img/slide3.jpg) no-repeat;
+}
+li.imglist3 {
+    position: absolute;
+    z-index: 10;
+    left: 0px; top: 0px;
+    background: url(../img/slide4.jpg) no-repeat;
 }
 .roll_content {
     position: static;
