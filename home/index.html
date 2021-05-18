@@ -20,8 +20,28 @@
 <script src="/home/js/slidemain.js"></script>
 <style>
 /* 태블릿용 메인페이지 스타일 지정(아래) */
-
+@media all and (min-width:801px) {
+	/* 상단로고와 메뉴스타일 */
+	header {
+		height: 113px;
+	}
+	.header_area h1 {
+		float: left; /* 로고이미지를 가운데에서 왼쪽으로 정렬(가로 801px 이상일때) */
+		padding: 15px 0 0;
+		padding-left: 20px;
+		width: auto;
+		height: inherit; /* inherit 상속받다, 현재영역의 부모높이를 그대로 사용해서 따라간다. 지금은 헤더의 height를 따라간다. */
+		text-align: inherit;
+	}
+	.header_area h1 a {
+		display: block; /*한개 자리를 다 차지하겠다.*/
+		width: 100px;
+		height: 80px;
+		background-size: 70px 80px !important;
+	}
+}
 </style>
+
 <script>
 //메인페이지 전용 슬라이드 호출 부분
 $(document).ready(function() {
