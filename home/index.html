@@ -17,14 +17,70 @@
 <link rel="stylesheet" href="/home/css/mobile.css">
 <!-- 태블릿용 CSS 임포트 -->
 <link rel="stylesheet" href="/home/css/tablet.css">
+<!-- PC용 CSS 임포트 -->
 <script src="/home/js/main.js"></script>
 <!-- 메인슬라이드 코어 임포트 -->
 <script src="/home/js/slidemain.js"></script>
 <style>
 /* 태블릿용 메인페이지 스타일 지정(아래) */
 @media all and (min-width:801px) {
-
-
+	/* 전화상담과 최근공지사항 */
+	.appbbs_area {
+		padding: 60px 0px;
+	}
+	.appbbs_box {
+		box-sizing: border-box;
+		padding: 0px 20px;
+	}
+	.app_line {
+		display: inherit;
+		float: left;
+		width: 65%; /* 나머지 35%가 최근공지사항영역 */
+		box-sizing: border-box;
+		padding: 46px 0px;
+		background: url(./img/bg_app.jpg); /* no-repeat이 필요없음. 단일색상이라서 */
+		font-size: 0; /* 시각장애를 위해서 존재*/
+		text-align: center;
+	}
+	.app_line a {
+		font-size: 21px;
+		display: inline-block;
+		width: 42.4%; /* 위에있는 65% 영역의 42.4% 라는 것.*/
+		height: 100px;
+		line-height: 100px;
+		box-sizing: border-box;
+		padding-left: 55px;
+		text-align: left;
+		background: rgba(0, 0, 0, 0.3) url(./img/ico_katalk.png) no-repeat 10px 50%; /*10px 가로위치, 50px 세로위치 */
+		border: 2px solid #fff;
+		color: #fff;
+		vertical-align: middle; /* 세로 가운데 정렬 */
+		margin-right: 10px;
+	}
+	.app_line a + a { /* 형제 태그선택 siblijng */
+		background-image: url(./img/ico_phone.png);
+		margin-right: 0px;
+		padding-left: 65px;
+	}
+	.bbs_line { /* 최신공지사항 영역 */
+		float: right;
+		width: 29%; /* 나머지 35% 중 29% 영역지정 나머지 6%는 여백으로 사용 */
+		border-top: none;
+		padding: inherit;
+	}
+	.bbs_line h3 {
+		font-size: 26px;
+		font-weight: inherit;
+	}
+	.bbs_line .notice_recent li a {
+		display: block;
+		padding-left: 14px;
+		background: url() no-repeat 0 50%;
+		overflow: hidden;
+		text-overflow: ellipsis; /* 무자열이 영역을 벗어났을 때 ... 표시하는 명령*/
+		white-space: nowrap; /* 줄바꿈시 단어를 기준으로 하지 않겠다. */
+	}
+	/* //전화상담과 최근공지사항 */
 }
 </style>
 
