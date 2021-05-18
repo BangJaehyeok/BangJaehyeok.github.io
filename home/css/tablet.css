@@ -180,11 +180,39 @@
 	.bbs_line .notice_recent li a {
 		display: block;
 		padding-left: 14px;
-		background: url() no-repeat 0 50%;
+		background: url(../img/ico_bullet.png) no-repeat 0 50%;
 		overflow: hidden;
-		text-overflow: ellipsis; /* 무자열이 영역을 벗어났을 때 ... 표시하는 명령*/
-		white-space: nowrap; /* 줄바꿈시 단어를 기준으로 하지 않겠다. */
+		text-overflow: ellipsis; /* 문자열이 영역을 벗어났을 때 ... 표시하는 명령*/
+		white-space: nowrap; /* 줄바꿈시 단어를 기준으로 하지 않겠다. wrapping안하고 바로 짤라버린다. */
 	}
 	/* //전화상담과 최근공지사항 */
 
+    /* 푸터영역 */
+	footer {
+		padding: inherit;
+		
+	}
+	.foot_area {
+		padding-left: 20px;/* 왼쪽 여백 */
+		padding-bottom: 0px; /* 아래 여백 */
+	}
+	.addr {
+		font-size: 13px;
+		line-height: 1.4;
+	}
+	.br_line {
+		display: inherit; /* 모바일에서 적용했던 스타일을 해제하겠다는 명령어*/
+	}
+	.snslink {
+		position: absolute; /* 현재 태그를 고정위치로 만들겠다. */
+		right: 20px;
+		top: 20px;
+		width: auto;
+		margin: inherit;
+	}
+	.snslink li {
+		margin-left: 15px;
+	}
+	
+	/* //푸터영역 */
 }

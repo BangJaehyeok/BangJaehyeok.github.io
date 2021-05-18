@@ -172,9 +172,9 @@ header { /* 태그 선택자 */
     background: url(../img/ico_gnb01.png) no-repeat 10px center;/* 10px 가로위치 세로는 가운데정렬*/
     background-size: 49px 56px;
 }
-.gnb_depth { /*2차(서브) 메뉴*/
-    display: none;
-}
+.gnb_depth { /* 2차(서브) 메뉴 */
+     display: none;}
+
 .gnb li + li a {/*1차대메뉴의 li태그 중 2번째 영역 */
     background-image: url(../img/ico_gnb02.png);
 }
@@ -357,6 +357,7 @@ li.imglist3 {
 /* 푸터스타일 지정 */
 footer {
 	border-top: 1px solid #ddd;
+    text-align: left;
 }
 .foot_area { /* 모바일에서는 큰 의미없는 명령어. PC, 태블릿에서는 유효 */
 	box-sizing: border-box;
