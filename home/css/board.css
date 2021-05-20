@@ -202,3 +202,69 @@ input::placeholder {color: #999;} /* IE 브라우저용 스타일 = 크로스브
     width: inherit;
     }
 }
+
+/* 게시판 글보기 영역 */
+.bbsview_list {
+    padding-bottom: 30px;
+    border-top: 2px solid #384d75;
+    text-align: left;
+}
+.bbsview_list li {
+    box-sizing: border-box;
+    padding: 0px 15px;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+.bbsview_list .bbs_title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.bbsview_list .bbs_hit {
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    width: 50%;
+}
+.bbsview_list .bbs_date {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+}
+.bbsview_list .bbs_content {
+    clear: both; /* float 기능을 해제*/
+    min-height: 200px; /* 내용이 비었더라도 최소 높이 200px 자리를 차지합니다. */
+    padding: 20px 15px !important;
+}
+.btn_bbs { /* 모바일 전용 */
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+    background: #384d75;
+    color: #fff !important;
+    text-align: center;
+}
+
+/* //게시판 글보기 영역 */
+
+/* 태블릿용 메인페이지 스타일 지정(아래) 801px~ 무한대까지 재정의 */
+@media all and (min-width:801px) {
+    /* 뷰페이지 버튼 스타일 */
+    .btn_bbs {
+        width: 70px;
+        float: none;
+        text-align: center;
+    }
+}
