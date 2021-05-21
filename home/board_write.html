@@ -24,6 +24,39 @@
 <script src="/home/js/slidemain.js"></script>
 <!-- 게시판 CSS임포트  -->
 <link rel="stylesheet" href="/home/css/board.css">
+<!-- 부트스트랩 CSS코어 임포트 -->
+<link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<!-- 부트스트랩 JS코어 임포트 -->
+<script src="/admin//plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE전용 CSS코어 임포트 -->
+<link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
+<!-- 첨부파일명을 input태그 디자인 안쪽에 집어넣는 확장프로그램 -->
+<script src="/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- 위 첨부파일 확장프로그램 실행 -->
+<script>
+    $(document).ready(function(){
+        bsCustomFileInput.init();
+    });
+</script>
+<!-- 서머노트 웹에디터 CSS 임포트 -->
+<link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
+<link rel="stylesheet" href="/admin/plugins/summernote/summernote.css">
+<!-- 서머노트 웹에디터 JS 임포트 -->
+<script src="/admin/plugins/summernote/summernote.min.js"></script>
+<!-- 서머노트 웹에디터 실행(아래-개발자가 처리) -->
+<script>
+    $(document).ready(function(){
+        // $('#content_lbl').summernote();//기본실행을 개발자가 커스터마이징한다.
+        $('#content_lbl').summernote({
+            height:150,
+            lang:'ko-KR',
+            placeholder:'글 내용을 입력해주세요.'
+            fontNames: ['Arial','Arial Black','Nanum Gothic']
+
+        });
+    });
+</script>
+
 <style>
 /* 모바일용 게시판 스타일 */
 
@@ -146,7 +179,6 @@ $(document).ready(function() {
                                 <input type="file" name="file" class="custom-file-input" id="customFile_1">
                                 <label class="custom-file-label" for="customFile" style="color:#999;">파일첨부1</label>
                             </div>
-                        <div style="height:10px;"></div>
                     </li>
                 </ul>
                 <p class="btn_line">

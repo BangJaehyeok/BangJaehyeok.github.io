@@ -21,6 +21,7 @@
 - 글쓰기폼(부트스트랩을 적용) : 첨부파일부분, 내용입력부분 웹에디터 추가
 - 부트스트랩(AdminLTE) : 제이쿼리 기반의 UI 템플릿(프레임워크) 구글에 adminlte검색
 - adminlte 3.10 다운받고 압축풀고 dist, pages, plugins, index, index2, index3만 골라서 깃작업폴더에 admin폴더에 복사함
+- board_write.html 파일에 bootstrap코어 임포트 + 서머노트 플러그인 임포트
 - 반응형 서브페이지들(로그인, 회원가입, 마이페이지).
 - 이클립스 헬로월드 실습.
 
