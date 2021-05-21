@@ -38,8 +38,36 @@
         bsCustomFileInput.init();
     });
 </script>
-
-
+<!-- 서머노트 웹에디터 CSS 임포트 -->
+<link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
+<link rel="stylesheet" href="/admin/plugins/summernote/summernote.css">
+<!-- 서머노트 웹에디터 JS 임포트 -->
+<script src="/admin/plugins/summernote/summernote.min.js"></script>
+<!-- 서머노트 웹에디터 실행(아래-개발자가 처리) -->
+<script>
+    $(document).ready(function(){
+        // $('#content_lbl').summernote();//기본실행을 개발자가 커스터마이징한다.
+        $('#content_lbl').summernote({
+            height:150,
+            lang:'ko-KR',
+            placeholder:'글 내용을 입력해주세요.',
+            toolbar: [
+					    ['fontname', ['fontname']],
+					    ['fontsize', ['fontsize']],
+					    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+					    ['color', ['forecolor','color']],
+					    ['table', ['table']],
+					    ['para', ['ul', 'ol', 'paragraph']],
+					    ['height', ['height']],
+					    ['insert',['link','video']],//'picture',
+					    ['view', ['fullscreen', 'help']]
+					],
+			fontNames: ['Arial', 'Arial Black','맑은 고딕','Nanum Gothic','궁서','굴림체','굴림','돋음체'],
+			fontSizes: ['8','10','12','14','16','18','20','24','28','30','36'],
+            fontNamesIgnoreCheck: ['Nanum Gothic']
+		});
+    });
+</script>
 <style>
 /* 모바일용 게시판 스타일 */
 
@@ -176,37 +204,6 @@ $(document).ready(function() {
 </div>
 <!-- //메인컨텐츠 영역 -->
 
-
-<script>
-    $(document).ready(function(){
-        // $('#content_lbl').summernote();//기본실행을 개발자가 커스터마이징한다.
-        $('#content_lbl').summernote({
-            height:150,
-            lang:'ko-KR',
-            placeholder:'글 내용을 입력해주세요.',
-            toolbar: [
-					    ['fontname', ['fontname']],
-					    ['fontsize', ['fontsize']],
-					    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
-					    ['color', ['forecolor','color']],
-					    ['table', ['table']],
-					    ['para', ['ul', 'ol', 'paragraph']],
-					    ['height', ['height']],
-					    ['insert',['link','video']],//'picture',
-					    ['view', ['fullscreen', 'help']]
-					],
-			fontNames: ['Arial', 'Arial Black','맑은 고딕','궁서','굴림체','굴림','돋음체'],
-			fontSizes: ['8','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
-		});
-    });
-    
-</script>
-<!-- 서머노트 웹에디터 CSS 임포트 -->
-<link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
-<link rel="stylesheet" href="/admin/plugins/summernote/summernote.css">
-<!-- 서머노트 웹에디터 JS 임포트 -->
-<script src="/admin/plugins/summernote/summernote.min.js"></script>
-<!-- 서머노트 웹에디터 실행(아래-개발자가 처리) -->
 
 <!-- 푸터메뉴및사업자정보영역 -->
 <footer>

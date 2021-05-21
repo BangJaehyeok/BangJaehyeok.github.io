@@ -4,7 +4,7 @@
 /* 공통영역 */
 body {
     /* body태그만 적용. a태그엔 적용 안됨 */
-    font-family: 'Nanum Gothic', 'sans-serif', '맑은 고딕';
+    font-family: 'Nanum Gothic', 'sans-serif', '맑은 고딕' !important;
     font-size: 16px !important;
     font-size: 8px;
     /* important는 중요함, 다른 폰트css는 무시, body 폰트크기는 16px로 무조건 고정 */
