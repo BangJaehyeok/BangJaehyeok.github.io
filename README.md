@@ -22,8 +22,12 @@
 - 부트스트랩(AdminLTE) : 제이쿼리 기반의 UI 템플릿(프레임워크) 구글에 adminlte검색
 - adminlte 3.10 다운받고 압축풀고 dist, pages, plugins, index, index2, index3만 골라서 깃작업폴더에 admin폴더에 복사함
 - board_write.html 파일에 bootstrap코어 임포트 + 서머노트 플러그인 임포트
+- board_view.html 댓글 UI디자인(부트스트랩) 추가.
 - 반응형 서브페이지들(로그인, 회원가입, 마이페이지).
-- 이클립스 헬로월드 실습.
+- 관리자단 AdminLTE 적용.(회원관리CRUD, 게시판CRUD, 대시보드)
+- 이클립스 헬로월드 실습. 1. 다이나믹 웹프로젝트(jsp만드는 방식) 만든 후 사용자단UI 실행해보기
+- 스프링 (MVC)웹프로젝트 만들예정. 헬로 스프링 1개, 2달간 이 프로젝트로 계속 진행.
+- 위 스프링 프로젝트에서 자바 기초도 이것으로 실습할 예정. -> html UI만든 것을 jsp로 변경하는 작업할 예정.
 
 ### 이클립스 다운로드 방법
 - https://drive.google.com/file/d/1BLj4XX9_ADx8NVZUZjcHxyjNJ6ZlEf_d/view
