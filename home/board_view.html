@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title> 커뮤니티 게시판 </title>
+<title> 스프링 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- 제이쿼리 코어 임포트(아래) 어느 페이지든 항상 있어야하는 코어 -->
+<!-- 제이쿼리 코어 임포트 가져오기(아래) -->
 <script src="/home/js/jquery-3.6.0.js"></script>
-<!-- 상단 바로가기 링크시 부드럽게 상단으로 이동하는 외부 라이브러리 js임포트(아래) -->
+<!-- 상단바로가기 클릭시 부드럽게 이동하는 외부 라이브러리 JS 임포트(아래) -->
 <script src="/home/js/jquery.smooth-scroll.min.js"></script>
-<!-- 화면 초기화시키는 reset 스타일을 임포트 : 크로스브라이징 처리하기위해-->
-<!-- 크롬, IE, 파폭, 사파리 등 h1, p, ul, div 태그의 크기가 조금씩 다르다 -->
-<!-- 작업한 결과가 모든 브라우저(크로싱브라우징)에 똑같이 보이게 하기 위한 reset.css -->
+<!-- 화면을 초기화 시키는 reset 스타일 임포트:크로스브라이징 처리하기위해서 -->
+<!-- 크롬, IE, 엣지, 사파리, 파이어폭스 h1, p, ul, div 태그의 크기가 조금씩 틀림니다. -->
+<!-- 작업한 결과가 모든 브라우져(크로싱브라우징)에 똑같이 보이게 하기 위한 reset.css(아래) -->
 <link rel="stylesheet" href="/home/css/reset.css">
-<!-- 여기서부터 사용자 정의형 스타일 + 스크립트 추가(아래) -->
+<!-- 여기서 부터 사용자 정의형 스타일 + 스크립트 추가(아래) -->
 <link rel="stylesheet" href="/home/css/mobile.css">
-<!-- 태블릿용 CSS 임포트 -->
+<!-- 테블릿용 CSS 임포트 -->
 <link rel="stylesheet" href="/home/css/tablet.css">
 <!-- PC용 CSS 임포트 -->
 <link rel="stylesheet" href="/home/css/pc.css">
+<!-- 게시판 CSS 임포트 -->
+<link rel="stylesheet" href="/home/css/board.css">
 <script src="/home/js/main.js"></script>
 <!-- 메인슬라이드 코어 임포트 -->
 <script src="/home/js/slidemain.js"></script>
 <!-- 폰트어썸 CSS 임포트 -->
 <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
-<!-- 게시판 CSS임포트  -->
-<link rel="stylesheet" href="/home/css/board.css">
-<!-- 부트스트랩 CSS코어 임포트 -->
+<!-- 부트스트랩CSS코어 임포트 -->
 <link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-<!-- 부트스트랩 JS코어 임포트 -->
-<script src="/admin//plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE전용 CSS코어 임포트 -->
+<!-- 부트스트랩JS코어 임포트 -->
+<script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE전용CSS코어 임포트 -->
 <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
-
 <style>
 /* 모바일용 댓글 스타일 */
-.row {margin: 0px;}
-.timeline {
-    text-align: left;
-    margin: 0px 5px;
+.row { margin:0px; }
+.timeline, .card-default {
+	text-align: left;
+	margin: 0px 5px;
 }
-
-/* //모바일용 댓글 스타일 */
-	footer {text-align: left;}
-/* 태블릿용 메인페이지 스타일 지정(아래) 801px~ 무한대까지 재정의 */
+.bs-stepper-content {
+	padding: 20px 10px;
+}
+/* 테블릿용 메인페이지 스타일 지정(아래) 801px~무한대까지 재정의 */
 @media all and (min-width:801px) {
-    /* 뷰페이지 버튼 스타일 */
-    .btn_bbs {
-        width: 70px;
-        float: none;
-        text-align: center;
-    }
+    
 }
 /* PC용 메인페이지 스타일 지정 1066px~무한대까지 재정의 */
 @media all and (min-width:1066px) {
+	
 }
 </style>
-
 <script>
-//메인페이지 전용 슬라이드 호출 부분
+// 메인페이지 전용 슬라이드 호출 부분
 $(document).ready(function() {
 	
 });
@@ -76,9 +70,11 @@ $(document).ready(function() {
 			
 			<!-- 상단메뉴메뉴영역 -->
 			<p class="openMOgnb">
-                <a href="#">
-                    <b class="hdd">메뉴열기</b> 
-                    <span></span><span></span><span></span></a></p>
+				<a href="#">
+					<b class="hdd">메뉴열기</b> 
+					<span></span><span></span><span></span>
+				</a>
+			</p>
 			<div class="header_cont">
 				<ul class="util clear">
 					<li><a href="login.html">로그인</a></li>
@@ -102,7 +98,7 @@ $(document).ready(function() {
 				        <div class="gnb_depth gnb_depth2_2">
                             <ul class="submenu_list">
                                 <li><a href="board_list.html">공지사항</a></li>
-                                <li><a href="board_list.html">갤러리게시판</a></li>
+                                <li><a href="board_list.html">겔러리게시판</a></li>
                             </ul>
                         </div>
 					</li>
@@ -114,8 +110,8 @@ $(document).ready(function() {
 		</div>
 	</header>
 	<!-- //헤더상단메뉴영역영역 -->
-
-<!-- 메인컨텐츠 영역 -->
+	
+<!-- 메인콘텐츠영역 -->
 <div id="container">
     <!-- 메인상단위치표시영역 -->
     <div class="location_area customer">
@@ -164,76 +160,154 @@ $(document).ready(function() {
     </div>
     <!-- //메인본문영역 -->
 
-    <!-- 댓글영역 -->
-    <div class="row">
-    </div class="col-md-12">
-    <!-- 댓글 입력폼 -->
-
-    <!-- //댓글 입력폼 -->
-        <div class="col-md-12">
-          <!-- The time line -->
-          <div class="timeline">
-            <!-- timeline time label -->
-            <div class="time-label">
-              <span class="bg-red">댓글리스트[<span>1</span>]</span>
-            </div>
-            <!-- /.timeline-label -->
-            <!-- timeline item -->
-            <div>
-              <i class="fas fa-envelope bg-blue"></i>
-              <div class="timeline-item">
-                <h3 class="timeline-header">작성자명</h3>
-
-                <div class="timeline-body">
-                  댓글 내용
-                </div>
-                <div class="timeline-footer">
-                  <a class="btn btn-primary btn-sm">수정</a>
-                </div>
-              </div>
-            </div>
-            <!-- END timeline item -->
-          </div>
-        </div>
-        <!-- /.col -->
-      </div>
-    <!-- //댓글영역 -->
+	<!-- 댓글영역 -->
+	<div class="row">
+		<div class="col-md-12">
+			<!-- 댓글 입력폼 -->
+			<div class="card-default">
+				<div class="card-header">
+				  <h3 class="card-title">댓글 쓰기</h3>
+				</div>
+				<div class="card-body p-0">
+				  <div class="bs-stepper linear">
+					<div class="bs-stepper-header" role="tablist">
+					  <div class="line"></div>
+					</div>
+					<div class="bs-stepper-content">
+					  <!-- your steps content here -->
+					  <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+						<div class="form-group">
+						  <label for="writer">작성자</label>
+						  <input type="text" class="form-control" id="writer" placeholder="작성자를 입력하세요">
+						</div>
+						<div class="form-group">
+						  <label for="reply_text">댓글내용</label>
+						  <input type="text" class="form-control" id="reply_text" placeholder="댓글내용을 입력하세요">
+						</div>
+					  </div>
+					  <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+						<button type="button" class="btn btn-warning" id="btn_reply_write">댓글등록</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<!-- /.card-body -->
+				<div class="card-footer">
+				  아래 댓글리스트 버튼을 클릭하시면 댓글 목록이 출력이 됩니다.
+				</div>
+			  </div>
+			<!-- //댓글 입력폼 -->
+		</div>
+		<div class="col-md-12">
+		  <!-- The time line -->
+		  <div class="timeline">
+			<!-- timeline time label -->
+			<div class="time-label">
+			  <span class="bg-red">댓글리스트[<span>1</span>]</span>
+			</div>
+			<!-- /.timeline-label -->
+			<!-- timeline item -->
+			<!-- 댓글리스트를 자바스크립트의 빵틀(템플릿)을 만듭니다.  -->
+			<!-- 고전append함수를 사용하지 않고, handlebars라는 확장프로그램(아래) 임포트 -->
+			<!-- 장점은 기존 퍼블리셔가 만든태그를 그대로 사용가능 -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+			<script id="template" type="text/x-handlebars-template">
+			{{#each .}}
+			<div class="div_template" data-rno="{{rno}}">
+			  <i class="fas fa-envelope bg-blue"></i>
+			  <div class="timeline-item">
+				<h3 class="timeline-header">{{replyer}}</h3>
+				<div class="timeline-body">
+				  {{reply_text}}
+				</div>
+				<div class="timeline-footer">
+				  <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-reply">수정</a>
+				</div>
+			  </div>
+			</div>
+			{{/each}}
+			</script>
+			<!-- END timeline item -->
+		  </div>
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- //댓글영역 -->
 
 </div>
-
-<!-- //메인컨텐츠 영역 -->
-
-
-<!-- 푸터메뉴및사업자정보영역 -->
-<footer>
-    <div class="foot_area box_inner">
-        <ul class="foot_list clear">
-            <li><a href="javascript:;">이용약관</a></li>
-            <li><a href="javascript:;">개인정보취급방침</a></li>
-        </ul>
-        <h2>스프링</h2>
-        <p class="addr">OOOO OOOOO OOOO OOOOOOOOO OOOOO <span class="gubun">/</span>        
-            <span class="br_line">대표전화 <span class="space0">02-1234-5678</span> <span class="gubun">/</span>        
-                <span class="br_line">E-mail : <span class="space0"> admin@OOOO OOOOO.com</span></span>
-            </span>
-        </p>
-        <p class="copy box_inner">Copyright(c) OOOO OOOOO all right reserved</p>
-        <ul class="snslink clear">
-            <li><a href="javascript:;">blog</a></li>
-            <li><a href="javascript:;">facebook</a></li>
-            <li><a href="javascript:;">instargram</a></li>
-        </ul>
-    </div>
-</footer>
-<!-- //푸터메뉴및주소영역 -->
+<!-- //메인콘텐츠영역 -->
+	
+	<!-- 푸터메뉴및사업자정보영역 -->
+	<footer>
+		<div class="foot_area box_inner">
+			<ul class="foot_list clear">
+				<li><a href="javascript:;">이용약관</a></li>
+				<li><a href="javascript:;">개인정보취급방침</a></li>
+			</ul>
+			<h2>스프링</h2>
+            <p class="addr">OOOO OOOOO OOOO OOOOOOOOO OOOOO <span class="gubun">/</span>        
+				<span class="br_line">대표전화 <span class="space0">02-1234-5678</span> <span class="gubun">/</span>        
+					<span class="br_line">E-mail : <span class="space0"> admin@OOOO OOOOO.com</span></span>
+				</span>
+			</p>
+			<p class="copy box_inner">Copyright(c) OOOO OOOOO all right reserved</p>
+			<ul class="snslink clear">
+				<li><a href="javascript:;">blog</a></li>
+				<li><a href="javascript:;">facebook</a></li>
+				<li><a href="javascript:;">instargram</a></li>
+			</ul>
+		</div>
+	</footer>
+	<!-- //푸터메뉴및주소영역 -->
 </div>
 <!-- //헤더에서푸터까지 -->
 
 <!-- 하단퀵메뉴영역 -->
 <div class="quick_area">
-<p class="to_top"><a href="#wrap" class="s_point">TOP</a></p>
+	<p class="to_top"><a href="#wrap" class="s_point">TOP</a></p>
 </div>
 <!-- //하단퀵메뉴영역 -->
-
+<!-- 모달창(초기엔 숨긴상태-수정버튼을 클릭하면 나타나는 창) -->
+<div class="modal fade" id="modal-reply">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title">작성자명</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<input class="form-control" type="text" name="modal_reply_text" id="modal_reply_text" value="댓글내용 출력">
+		</div>
+		<div class="modal-footer"><!-- justify-content-between:양쪽배분정렬 -->
+			<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+			<button type="button" class="btn btn-primary">수정</button>
+			<button type="button" class="btn btn-danger">삭제</button>
+		</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script>
+	$(document).ready(function(){
+		$('#btn_reply_write').click(function(){
+			// alert('댓글등록버튼');
+			$.ajax({
+				method:'get',
+				url:'./board_view.html',//RestAPI URL 입력
+				dataType:'text',
+				success:function(result) {
+					alert('RestAPI성공');
+				},
+				error:function() {
+					alert('RestAPI서버가 작동하지 않습니다.');
+				}
+			});
+		});
+	});
+</script>
 </body>
 </html>
