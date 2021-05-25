@@ -16,6 +16,7 @@
 - 자바에 익숙해진 후 스프링프로젝트를 이용해 VScode에서 만든 UI를 JSP로 변경한 후 스프링웹프로젝트를 진행함.
 
 #### 20210525(화) 작업
+- css : 계층:조부 > 부 > 본인(timeline) > 자식(collapse timeline) > 손자(time-lable) > 증손자
 - board_view.html 댓글 AdminLTE3의 페이징 UI 추가예정.
 - 반응형 서브페이지들(로그인, 회원가입, 마이페이지).
 - 관리자단 AdminLTE적용.(회원관리CURD, 게시판CURD, 대시보드)
