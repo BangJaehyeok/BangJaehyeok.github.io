@@ -180,7 +180,7 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body table-responsive p-0">
-            <table class="table table-hover text-nowrap">
+            <table class="table table-hover"><!-- text-nowrap 문자줄바꿈안하기 -->
               <thead>
                 <tr>
                   <th>ID</th>
@@ -223,38 +223,39 @@
             </table>
           </div>
           <!-- /.card-body -->
-          <!-- card-footer -->
-          <div class="card-footer">
-            <ul class="pagination">
-              <li class="paginate_button page-item previous disabled" id="example2_previous">
-                <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-              </li>
-              <li class="paginate_button page-item active">
-                <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-              </li>
-              <li class="paginate_button page-item ">
-                <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-              </li>
-              <li class="paginate_button page-item ">
-                <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-              </li>
-              <li class="paginate_button page-item ">
-                <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-              </li>
-              <li class="paginate_button page-item ">
-                <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-              </li>
-              <li class="paginate_button page-item ">
-                <a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a>
-              </li>
-              <li class="paginate_button page-item next" id="example2_next">
-                <a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
-              </li>
-            </ul>
-          </div>
-          <!-- //card-footer -->
         </div>
-        <!-- //콘텐츠 내용 -->
+    <!-- //콘텐츠 내용 -->
+    <!-- 페이징 처리 -->
+    <div class="col-12 text-right">
+        <button class="btn btn-primary ">글쓰기</button>
+        <ul class="pagination justify-content-center">
+        <li class="paginate_button page-item previous disabled" id="example2_previous">
+            <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+        </li>
+        <li class="paginate_button page-item active">
+            <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+        </li>
+        <li class="paginate_button page-item ">
+            <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+        </li>
+        <li class="paginate_button page-item ">
+            <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+        </li>
+        <li class="paginate_button page-item ">
+            <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+        </li>
+        <li class="paginate_button page-item ">
+            <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+        </li>
+        <li class="paginate_button page-item ">
+            <a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a>
+        </li>
+        <li class="paginate_button page-item next" id="example2_next">
+            <a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
+        </li>
+        </ul>
+    </div>
+    <!-- //페이징 처리 -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

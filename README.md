@@ -24,6 +24,7 @@
 - 관리자단 기본 템플릿 : 공통 UI부분 작업중.
 - Ctrl+K + Ctrl+0 = 코드축소 = Ctrl+K+0 (코드구조 확인)
 - Ctrl+k, Ctrl+J = 코드펼침 = Ctrl+K+J
+- 문자줄바꿈안하기 text-nowrap
 
 
 #### 20210526(수) 작업
