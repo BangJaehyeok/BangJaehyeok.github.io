@@ -16,8 +16,14 @@
 - 자바에 익숙해진 후 스프링프로젝트를 이용해 VScode에서 만든 UI를 JSP로 변경한 후 스프링웹프로젝트를 진행함.
 
 
-#### 20210527(목) 작업예정
-- 관리자단 AdminLTE적용.(회원관리CURD, 게시판CURD, 대시보드)
+#### 20210527(목) 작업
+- admin/board_list.html부터 시작.
+- 관리자단 AdminLTE적용.(회원관리CURD-스프링작업시, 게시판CURD, 대시보드)
+- 관리자단 AdminLTE적용 - 지금할것 : 게시판CRUD-html, 대시보드-html
+                       - 스프링작업시 할 것 : 회원관리CRUD(바로jsp), 게시판생성관리CRUD(바로jsp)
+- 관리자단 기본 템플릿 : 공통 UI부분 작업중.
+- Ctrl+K + Ctrl+0 = 코드축소 = Ctrl+K+0 (코드구조 확인)
+- Ctrl+k, Ctrl+J = 코드펼침 = Ctrl+K+J
 
 
 #### 20210526(수) 작업
