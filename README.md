@@ -18,6 +18,8 @@
 #### 20210528(금) 작업예정
 - 관리자단 admin/board_write.html, board_view.html(댓글 ajax 처리)
 - 대시보드 home.html (최근 회원가입정보, 최근 게시물정보)
+- 관리자단 AdminLTE적용-스프링시간|UI 디자인시간 선택 후 아래 작업 진행 예정
+- 회원관리CRUD-Html, 게시판생성관리CRUD-html
 - 이클립스로 작업한 html 가져가서 -> resources 폴더(admin,home,root파일까지 복붙)로 배치
 - 프런트 개발자에게 받아서 배치하는 것이 스프링 작업의 시작
 
