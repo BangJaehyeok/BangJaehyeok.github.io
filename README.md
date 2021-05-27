@@ -30,6 +30,7 @@
 - Ctrl+K + Ctrl+0 = 코드축소 = Ctrl+K+0 (코드구조 확인)
 - Ctrl+k, Ctrl+J = 코드펼침 = Ctrl+K+J
 - 문자줄바꿈안하기 text-nowrap
+- row를 없애고 justify-contest-center를 추가해서 가운데정렬함.
 
 
 #### 20210526(수) 작업
