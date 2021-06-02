@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head script src="script.js">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>계산기 프로젝트</title>
-    <link rel="stylesheet" href="../css/style_calculate.css">
+    <link rel="stylesheet" href="style_calculate.css">
+    <script src="script.js"></script>
 </head>
-<body>
+<body style="justify-content: center; display:flex; align-items: center; height: 100vh;">
     <div style="background-color: rgb(238, 238, 238);">
     <div class="display">
         <p id="output">0</p>
     </div>
     <div class="row1">
-        <button id="r1-1" style="width: 140px;">C</button>
-        <button id="r1-2">%</button>         
-        <button id="r1-3">/</button>
+        <button id="r1-1" value="C" onclick="reset()"style="width: 140px;">C</button>
+        <button id="r1-2" value="%" onclick="perc()('%')">%</button>         
+        <button id="r1-3" value="÷" onclick="fordisplay('÷') ">÷</button>
     </div>
     <div class="row2">
-        <button id="r2-1">7</button>
-        <button id="r2-2">8</button>         
-        <button id="r2-3">9</button>
-        <button id="r2-4">X</button>
+        <button id="r2-1" value="7" onclick="fordisplay('7') ">7</button>
+        <button id="r2-2" value="8" onclick="fordisplay('8') ">8</button>         
+        <button id="r2-3" value="9" onclick="fordisplay('9') ">9</button>
+        <button id="r2-4" value="C" onclick="fordisplay('*') ">X</button>
     </div>
     <div class="row3">
-        <button id="r3-1">4</button>
-        <button id="r3-2">5</button>         
-        <button id="r3-3">6</button>
-        <button id="r3-4">-</button>
+        <button id="r3-1" value="4" onclick="fordisplay('4') ">4</button>
+        <button id="r3-2" value="5" onclick="fordisplay('5') ">5</button>         
+        <button id="r3-3" value="6" onclick="fordisplay('6') ">6</button>
+        <button id="r3-4" value="-" onclick="fordisplay('-') ">-</button>
     </div>
     <div class="row4">
-        <button id="r4-1">1</button>
-        <button id="r4-2">2</button>         
-        <button id="r4-3">3</button>
-        <button id="r4-4">+</button>
+        <button id="r4-1" value="1" onclick="fordisplay('1') ">1</button>
+        <button id="r4-2" value="2" onclick="fordisplay('2') ">2</button>         
+        <button id="r4-3" value="3" onclick="fordisplay('3') ">3</button>
+        <button id="r4-4" value="+" onclick="fordisplay('+') ">+</button>
     </div>
     <div class="row5">
-        <button id="r5-1" style="width: 140px;">0</button>
-        <button id="r5-2">.</button>         
-        <button id="r5-3">=</button>
+        <button id="r5-1" value="0" onclick="fordisplay('0') " style="width: 140px;">0</button>
+        <button id="r5-2" value="." onclick="fordisplay('.') ">.</button>         
+        <button id="r5-3" value="=" onclick="fordisplay()">=</button>
     </div>
 </div>
+</div>
+</div>
+</script>
 </body>
 </html>
