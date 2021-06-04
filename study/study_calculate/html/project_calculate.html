@@ -10,7 +10,7 @@
 </head>
 <!-- 계산기 화면 정가운데 뜨게하는 body태그 style주기 -->
 <body style="justify-content: center; display:flex; align-items: center; height: 100vh;">
-    <div style="background-color: rgb(238, 238, 238);">
+    <div style="background-color: rgb(224, 224, 224);">
     <div class="display">
         <p id="output">0</p>
     </div>
@@ -23,7 +23,7 @@
         <button id="r2-1" value="7" onclick="fordisplay('7') ">7</button>
         <button id="r2-2" value="8" onclick="fordisplay('8') ">8</button>         
         <button id="r2-3" value="9" onclick="fordisplay('9') ">9</button>
-        <button id="r2-4" value="C" onclick="fordisplay('*') ">X</button>
+        <button id="r2-4" value="*" onclick="fordisplay('*') ">X</button>
     </div>
     <div class="row3">
         <button id="r3-1" value="4" onclick="fordisplay('4') ">4</button>
@@ -40,7 +40,7 @@
     <div class="row5">
         <button id="r5-1" value="0" onclick="fordisplay('0') " style="width: 140px;">0</button>
         <button id="r5-2" value="." onclick="fordisplay('.') ">.</button>         
-        <button id="r5-3" value="=" onclick="fordisplay()">=</button>
+        <button id="r5-3" value="=" onclick="solve()" >=</button>
     </div>
 </div>
 </div>

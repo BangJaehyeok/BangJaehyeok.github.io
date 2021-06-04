@@ -22,3 +22,10 @@ function perc() {
     value = value / 100;
     document.getElementById("output").innerHTML = value;
 }
+// = 기능 추가
+function solve() {
+    removeZero()
+    var equation = document.getElementById("output").innerHTML;
+    var solved = eval(equation);
+    document.getElementById('output').innerHTML = solved;
+}
