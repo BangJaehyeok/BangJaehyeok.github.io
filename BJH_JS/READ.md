@@ -1,0 +1,23 @@
+#### 20210806 (금) 작업
+- D드라이브에 저장소를 마련한다.
+- 리포지토리(저장소) 초기화 : git init
+- git add .
+- Git에서 'user.name' 및 'user.email'을 구성하라고 떠요(해결책)
+- git config --local user.name 이름
+- git config --local user.email 이메일
+- git branch -M master
+- git remote add origin [사용자의 깃허브 저장소 URL]
+- git push -u -origin master
+- 업로드절차 1. 커밋(commit) 2. 푸시(push)
+- 다운로드절차 1. 풀(pull) : 교실에서 작업한 결과를 집에서 이어서 작업할 상황
+- 업로드 방법 : 커밋(commit)과 푸시(push)가 깃에 올리는 방법이다.
+- 다운로드 : 풀(pull) 교실에 있다가 집에서 작업물을 확인할때.
+- html(개발PC) 과 깃 저장소를 연결시킨다.
+
+- ctrl+shift+B키를 누르면 크롬과 연동되어 작업내용이 새 크롬창에 떠서 나타난다.
+- document.write("방재혁") = System.out.print("방재혁");과 동일
+- 줄바꿈 <br> 줄생기게하고 한줄띄우기 <hr>
+- html은 항상 시작태그, 끝태그로 구성되어야함.<html></html>
+- html은 <head></head>와 <body></body> 크게 두가지로 구성되어있다.
+- <title> : 웹페이지의 제목태그
+- ㅁㅁㅂㅈ
