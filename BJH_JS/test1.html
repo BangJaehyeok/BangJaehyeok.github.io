@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>first test</title>
 </head>
-<script >  
-  for(i=2;i<10;i++){
-      for(j=1;j<10;j++){
-          document.write(i+'X'+j+'='+(i*j)+'<br>')
-      }
-  }
+<script>  
+//100이하의 소수 구하기
+for(i=2;i<=1000;i++){
+    for(j=2; i>j;j++){
+        if(i%j==0) {
+            break;
+        }
+    }
+    if(i==j){
+        document.write(i+'<br>')
+    }
+}
 </script>
 <body>
 </body>
