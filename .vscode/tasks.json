@@ -9,7 +9,7 @@
             "command": "chrome.exe",
             "windows":{
                 "command":"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-                //집 : "command":"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+                //집 "command":"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
             },
             "args":[
                 "${file}"

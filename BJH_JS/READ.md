@@ -29,6 +29,14 @@
 =============================================
 - input type의 radio는 같은 name, id로 묶어야 그 중 한가지만 선택 가능하다.
 
+- var obj={}; 자바스크립트의 빈 객체를 선언.
+- 서버-클라이언트 간의 데이터형식
+- 자바스크립트 객체는 key value couple이다. 그리고 서버와 클라이언트 간의 데이터형식이라 중요하다.
+- JavaScript Object Notation) -> JSON(제이슨) 형식
+- obj={'name':'James','mobile':'77778888','gender':'male','region':'Cheonan'};
+- obj['fname']=function(){document.write('myname')}
+- JSON 부분 아는부분만 대충봐도 충분히 공부된다. 너무 어렵고 꼼꼼하게 공부하지말자. 지친다.
+
 #### 20210809 (월) 작업
 - 자바스크립트는 웹상에서 작동하는 언어이다.
 - 자바스크립트는 Hello.js 파일로 작동한다.

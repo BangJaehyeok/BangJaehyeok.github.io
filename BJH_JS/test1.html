@@ -7,23 +7,23 @@
     <title>My first test</title>
 </head>
 <body>
-   <input type="text"><br>
-   <input type="radio" name="gender">남자<input type="radio" name="gender">여자<br>
-   <input type="checkbox"><br>
-   <input type="file"><br>
-   <input type="password"><br>
-   <input type="submit"><br>
-   <input type="button" value="버튼"><br>
-   <input type="number"><br>
-   <input type="date"><br>
-   <select size="5" multiple>
-    <option>Korea</option>
-    <option>USA</option>
-    <option>France</option>
-
-   </select><br>
-   <textarea rows="10" cols="20"></textarea>
-</body>
+  점수:<input type="text" name="point">
+  <input type="button" name="btnPoint" value="입력" onclick="getPoint()">
+  <input type="button" name="btnCalc" value="계산" onclick="getResult()">
 <script>
+    var arPoint=[];
+    function getPoint(){
+        //Point안의 점수값을 읽어서 arPoint배열에 추가
+        
+        b=document.getElementsByName('point')[n].value;
+        arPoint.push(b);
+    }
+    function getResult(){
+        //합계/평균을 구해서
+        //alert로 출력
+        //합계:ㅌㅌㅌ
+        //평균:ㅌㅌㅌㅌ
+
+    }
 </script>
 </html>
