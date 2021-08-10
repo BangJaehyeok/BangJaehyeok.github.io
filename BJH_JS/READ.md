@@ -1,3 +1,7 @@
+#### 20210811 (수) 작업
+- 
+
+
 #### 20210810 (화) 작업
 - function setName(){
         k=prompt("Your name:","");
@@ -49,6 +53,21 @@
 - clearTimeout : setTimeout을 취소
 - setInterval : 일정 시간 간격으로 실행.
 - clearInterval : setInterval을 취소
+
+```
+gn=0; let timer;
+  function getResult(){ 
+      alert("타이머가 시작됩니다.")
+      gn=1;
+      timer=setInterval(function(){
+      console.log(gn);
+      document.getElementsByName('point')[0].value=gn+"초가 지났습니다.";
+      gn+=1;
+  },1000)
+```
+- 이렇게 함수를 통째로 써서 작동시키는 경우도 있다. 해당 함수는 1초마다 1+gn초가 지났습니다라는 멘트를 text창에 출력시키는 함수이다. 1000은 ms단위로 1초이다.
+- console.log(gn);은 검사의 콘솔창에 차례차례 값을 찍어내는 역할이다. 잘 작동하는지 디버깅하기위함이다. console알아둘것.
+- 해당 함수는 비록 for문같은 반복문이 아니지만 setInterval이 가진 특성으로 인해 반복문의 성질을 띄고 있다. 그리고 많은 곳에 이용되니 꼭 외워두자.
 
 #### 20210809 (월) 작업
 - 자바스크립트는 웹상에서 작동하는 언어이다.
