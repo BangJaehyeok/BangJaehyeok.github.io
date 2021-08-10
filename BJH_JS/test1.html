@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>first test</title>
+    <title>My first test</title>
 </head>
-<script>  
-//100이하의 소수 구하기
-for(i=2;i<10;i++){
-    // for(j=1; j<10;j++){
-    //     document.write(outprint(i,j))
-    //     }
-    outprint(i)
-    
-}
-function outprint(i){
-    for(j=1;j<10;j++){
-        document.write(i+'x'+j+'='+(i*j)+'<br>')
-    }
-}
-</script>
 <body>
-</body>
+    이름  : <input type="text" name="pname"><br><br>
+    모바일: <input type="text" name="mobile"><br><br>
+    지역  : <input type="text" name="region"><br><br>
+    <input type="button" name="btnGO" id="btnShow" value="Show" onclick="show()">
 
+</body>
+<script>
+    function show(){
+        k1=document.getElementsByName('pname')[0].value;
+        k2=document.getElementsByName('mobile')[0].value;
+        k3=document.getElementsByName('region')[0].value;
+        alert("이름:"+k1+'\n'+"모바일:"+k2+'\n'+"지역:"+k3)
+    }
+</script>
 </html>
