@@ -7,14 +7,13 @@
     <title>My first test</title>
 </head>
 <body>
-  점수:<input type="text" name="point"  id="point">
-  <input type="button" name="btnPoint" value="입력" onclick="getPoint()">
-  <input type="button" name="btnCalc" value="계산" onclick="getResult()">
-  <input type="button" name="btnInit" value="초기화" onclick="getInit()">
+  점수 : <input type="text" name="point"  id="point"><br><br>
+  <input type="button" name="btnPoint" value="   입력   " onclick="getPoint()">
+  <input type="button" name="btnCalc" value="   계산   " onclick="getResult()">
+  <input type="button" name="btnInit" value="  초기화  " onclick="getInit()">
 <script>
     var arPoint=[];
-    function getPoint(){
-        //Point안의 점수값을 읽어서 arPoint배열에 추가
+    function getPoint(){        
         a=document.getElementsByName('point')[0].value;
         arPoint.push(a);
         document.getElementById("point").value="";
