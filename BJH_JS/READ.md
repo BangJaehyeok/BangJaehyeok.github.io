@@ -26,7 +26,8 @@
 
 -k1=document.getElementsByName('pname')[0].value; k1이 왼쪽에 있으면 오른쪽의 값을 꺼내와서 k1에 저장하는것.
 - document.getElementsByName('pname')[0].value=k; k가 오른쪽에 있으면 왼쪽에 k값을 넣는 것이다. 즉, k가 뭐라고 앞에 정의되어있으면 그 정의된 값이 왼쪽에 들어간다.
-
+=============================================
+- input type의 radio는 같은 name, id로 묶어야 그 중 한가지만 선택 가능하다.
 
 #### 20210809 (월) 작업
 - 자바스크립트는 웹상에서 작동하는 언어이다.

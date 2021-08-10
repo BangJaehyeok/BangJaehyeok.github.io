@@ -7,18 +7,23 @@
     <title>My first test</title>
 </head>
 <body>
-    이름  : <input type="text" name="pname"><br><br>
-    모바일: <input type="text" name="mobile"><br><br>
-    지역  : <input type="text" name="region"><br><br>
-    <input type="button" name="btnGO" id="btnShow" value="Show" onclick="show()">
+   <input type="text"><br>
+   <input type="radio" name="gender">남자<input type="radio" name="gender">여자<br>
+   <input type="checkbox"><br>
+   <input type="file"><br>
+   <input type="password"><br>
+   <input type="submit"><br>
+   <input type="button" value="버튼"><br>
+   <input type="number"><br>
+   <input type="date"><br>
+   <select size="5" multiple>
+    <option>Korea</option>
+    <option>USA</option>
+    <option>France</option>
 
+   </select><br>
+   <textarea rows="10" cols="20"></textarea>
 </body>
 <script>
-    function show(){
-        k1=document.getElementsByName('pname')[0].value;
-        k2=document.getElementsByName('mobile')[0].value;
-        k3=document.getElementsByName('region')[0].value;
-        alert("이름:"+k1+'\n'+"모바일:"+k2+'\n'+"지역:"+k3)
-    }
 </script>
 </html>
