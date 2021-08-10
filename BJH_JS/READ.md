@@ -37,6 +37,18 @@
 - obj['fname']=function(){document.write('myname')}
 - JSON 부분 아는부분만 대충봐도 충분히 공부된다. 너무 어렵고 꼼꼼하게 공부하지말자. 지친다.
 
+- p=parseInt(arPoint[i]) 처음 arPoint[]를 선언했을때는 안의 값은 어떻게 넣든 문자열이다. 그래서 parseInt를 통해서 arPoint[]의 값들을 정수값으로 변환해줘야한다.
+- 배열 초기화를 시키는 방법은 arPoint=[];로 다시 빈값으로 정의해주는게 간편한 방법이다.
+
+- Java의 Array : for(int i=0;i<arPoint.length;i++)
+- ArrayList : for(int i=0;i<arPoint.size();i++)
+
+- setTimeout : 일정 시간 후에 1회 실행
+- setTimeout(함수명, 지연시간(ms)); <== 3000ms가 3초이다.
+- clearTimeout : setTimeout을 취소
+- setInterval : 일정 시간 간격으로 실행.
+- clearInterval : setInterval을 취소
+
 #### 20210809 (월) 작업
 - 자바스크립트는 웹상에서 작동하는 언어이다.
 - 자바스크립트는 Hello.js 파일로 작동한다.

@@ -11,19 +11,25 @@
   <input type="button" name="btnPoint" value="   입력   " onclick="getPoint()">
   <input type="button" name="btnCalc" value="   계산   " onclick="getResult()">
   <input type="button" name="btnInit" value="  초기화  " onclick="getInit()">
-  <input type="button" name="btnCalc" value="Show" onclick="getResult()"
-</body>
 <script>
-  function getResult(){
-      setTimeout(showText,2000);      
-  }
-  function showText(){
-      document.getElementsByName('point')[0].value="2초가 지났습니다.";
-  }
-  function getInit(){
-        arPoint=[];       
+    var arPoint=[];
+    function getPoint(){        
+        a=document.getElementsByName('point')[0].value;
+        arPoint.push(a);
         document.getElementById("point").value="";
     }
-   
+    function getResult(){
+        b=0;
+        for(i=0;i<arPoint.length;i++){
+            p=parseInt(arPoint[i])
+            b += p
+        }
+        c=b/arPoint.length
+
+        alert("합계:"+b+'\n'+"평균:"+c)       
+    }
+    function getInit(){
+        arPoint=[];
+    }
 </script>
 </html>
