@@ -8,21 +8,30 @@
 </head>
 <body>
   점수 : <input type="text" name="point"  id="point"><br><br>
-  <input type="button" name="btnPoint" value="   입력   " onclick="getPoint()">
-  <input type="button" name="btnCalc" value="   계산   " onclick="getResult()">
-  <input type="button" name="btnInit" value="  초기화  " onclick="getInit()">
-  <input type="button" name="btnCalc" value="Show" onclick="getResult()"
+  <input type="button" name="btnCalc" value="   Show   " onclick="getResult()">
+  <input type="button" name="btnInit" value="   Stop   " onclick="doStop()">
 </body>
 <script>
-  function getResult(){
-      setTimeout(showText,2000);      
+gn=0;
+let timer;
+  function getResult(){      
+      //setTimeout(showText,2000); //해당 함수를 밖으로 빼서 함수만 호출해서 쓰는 경우
+      alert("타이머가 시작됩니다.")
+      gn=1;
+      timer=setInterval(function(){
+      console.log(gn);
+      document.getElementsByName('point')[0].value=gn+"초가 지났습니다.";
+      gn+=1;
+  },1000)
   }
-  function showText(){
-      document.getElementsByName('point')[0].value="2초가 지났습니다.";
-  }
-  function getInit(){
-        arPoint=[];       
-        document.getElementById("point").value="";
+//   function showText(){
+//       console.log(gn);
+//       document.getElementsByName('point')[0].value=gn+"초가 지났습니다.";
+//       gn+=1;
+//   }
+  function doStop(){
+        clearInterval(timer);
+        document.getElementsByName('point')[0].value=""
     }
    
 </script>

@@ -45,6 +45,7 @@
 
 - setTimeout : 일정 시간 후에 1회 실행
 - setTimeout(함수명, 지연시간(ms)); <== 3000ms가 3초이다.
+- (1) 함수선언 (2) 그 함수를 setTimeout에서 n초 지연후 실행
 - clearTimeout : setTimeout을 취소
 - setInterval : 일정 시간 간격으로 실행.
 - clearInterval : setInterval을 취소
