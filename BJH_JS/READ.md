@@ -1,3 +1,33 @@
+#### 20210810 (화) 작업
+- function setName(){
+        k=prompt("Your name:","");
+        document.getElementsByName('pname')[0].value=k;}
+    ==> 이 setName함수는 prompt로 텍스트입력 팝업창이 뜨게한다.
+    그리고 document.getElementsByName('pname')[0].value=k;는 getElementsByName은 'pname'이라는 Name의 배열에 k의 값을 배열[0]에 넣어서 출력한다는 것이다.
+
+- 자바스크립트 배열선언 : var ar=[]; 자바스크립트의 배열은 자바의 ArrayList와 성격이 같다. 그래서 추가,삭제,수정이 자유롭다.
+- var ar=[]; or let ar=[]; or var ar=new Array(); 이렇게 배열을 선언한다.
+- var ar=[10]; 배열의 길이가 10인 배열이 선언된다. 그리고 이 배열은 값이 지정되어있어도 추가,삭제가 매우 자유롭다.
+- 추가(push)/삭제(pop,shift,delete)
+- ar.push('Hello'), ar.push('World'), ar.push('Welcome')
+- document.write(ar[0]) = Hello // document.write(ar[2]) = Welcome
+- ar[1]=3.14;라고 뒤에 선언해도 이것이 지정된 배열만 혼자 타입이 바뀌어서 숫자 3.14로 저장이된다.
+- ar.pop();하면 배열 가장 뒤의 배열값이 사라진다. 즉 Welcome이 사라짐.
+- k=ar.pop(); document.write(k);하면 welcome이 찍힌다. 
+- k=ar.shift(); document.write(k);하면 Hello가 출력된다. 즉, shift 함수는 가장 맨 앞의 값을 삭제시킴. 맨 앞의 0번째 배열을 삭제하니 인덱스번호가 다시 정해져서 1이었던 배열 인덱스값은 0으로 바뀌는 등의 하나씩 줄어든다.
+- delete ar[1]; delete는 순서상관없이 배열 인덱스값을 지정해서 삭제한다.
+
+-자바스크립트에서 HTML 문서의 객체를 가져올때 사용되는 함수는
+.getElementById(), .getElementsByName(), .getElementsByTagName(), .getElementsByClassName() 가 있다.
+- .getElementsByName()으로 가져온 객체는 배열로 저장이 된다.
+- document.getElementsByName('pname')[0].value=k;}
+- e=document.getElementsByName('pname') 라고한다면
+- e[0].value=k e라는 배열 0번째 값에 k의 값을 집어넣어라.
+
+-k1=document.getElementsByName('pname')[0].value; k1이 왼쪽에 있으면 오른쪽의 값을 꺼내와서 k1에 저장하는것.
+- document.getElementsByName('pname')[0].value=k; k가 오른쪽에 있으면 왼쪽에 k값을 넣는 것이다. 즉, k가 뭐라고 앞에 정의되어있으면 그 정의된 값이 왼쪽에 들어간다.
+
+
 #### 20210809 (월) 작업
 - 자바스크립트는 웹상에서 작동하는 언어이다.
 - 자바스크립트는 Hello.js 파일로 작동한다.
