@@ -25,6 +25,51 @@
     console.log('btnCalc 클릭')
   }) <==여기에 세미콜론찍지말아라. 꼭!! 에러난다.
 - src인데 scr로 오타내서 에러내지말자. 먼저 확인해보자.
+- $(#'point').hide(); => 즉시 사라짐
+- .show() => 즉시 나타남
+- .fadeIn() => 서서히 나타남 .fadeOut()=> 서서히 없어짐
+- fadeIn,fadeOut은 괄호 안에 숫자를 넣으면 그 숫자에 맞춰 사라지고 나타남 1000이 1초 기본은 400
+- $('#point').css('background-color','lightgoldenrodyellow')
+- 제이쿼리에서 css를 처리할 수 있다.
+- .on('click','#btnGO',function(){   
+    $(this).fadeOut(1000);
+- 위처럼 #btnGO라는 자기자신에게 하는 명령이 중복되면 $(this)로 처리해서 간단한 코딩을 한다.
+- css적용을 할때 다른 css설정을 여러개 쓰고싶으면
+- .css({'background-color':'lightgoldenrodyellow','color':'red'}) 이렇게 쓴다.
+- 코딩간편화를 위해 obj={'background-color':'lightgoldenrodyellow','color':'red'}  .css(obj) 이렇게 간편화시키기도한다.
+- <style>
+  .style1 
+  {background-color : lightgoldenrodyellow;
+  color:red
+  };
+  .style2 
+  {background-color : white; 
+  color:blue
+  };
+- 위의방식으로 스타일css를 추가해서 하나의 문서에서 공통으로 가져다 쓸 수 있다.
+
+
+========================================================
+
+- 객실관리 프로그램
+- 웹페이지 화면이 두개.
+- 오늘 할일은 html과 css구성하기
+- 1st 페이지
+- 객실관리  예약관리(밑줄)
+- 객실목록 : 백두산(스위트룸 4) 한라산(패밀리룸 6) 나머지산 등등
+- 메뉴 : 객실이름(검색메뉴)(input type text), 객실분류(여러방의 종류들 스위트룸,패밀리룸, 더블룸, 싱글룸)(input type select option), 숙박가능인원(input type=number로 늘리고 줄이기), 1박요금(input type money), 
+밑에 등록, 삭제, Clear버튼 3개 넣기
+- 나중에 메뉴를 설명하는 부분을 꼭 넣기. 말풍선을 넣는다던가 한쪽의 공간에 설명을 넣기
+
+-2nd 페이지
+- 객실관리(밑줄) 예약관리
+- 박스하나넣고 숙박기간 input type date로 하기
+- 객실분류 input type select option and 옆에 검색or찾기 버튼
+- 박스 밑에 또다른 큰 박스로 그 기간동안 예약 가능한 방리스트를 쫙 펼쳐놓기
+- 오른쪽또다른 박스로 예약된 객실을 박스 안에 리스트로 나타나게한다.
+- 가운데 공간에 객실이름, 숙박기간, 숙박인원, 총 숙박비, 예약자 모바일 정보가 나오게 한다.
+- 등록, 취소, Clear
+
 
 
 #### 20210810 (화) 작업

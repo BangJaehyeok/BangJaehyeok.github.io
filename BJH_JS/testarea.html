@@ -6,22 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My first test</title>
 </head>
+<style>
+  .style1 
+  {background-color:lightgoldenrodyellow;
+  color:red
+};
+  .style2 
+  {background-color : white; 
+  color:blue
+  };
+</style>
 <body>
-  <input type="text" id="point" value="30"><br>
-  <input type="button" id="btnShow" value="Show"><br>
-  <input type="button" id="btnClear" value="Clear"
+  <input type="text" id="point">
+  <input type="button" id="btnGO" value="Show">
+  <input type="button" id="btnClear" value="Clear">
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
-  //document.getElementById('point').value='50'
-  //k=$('#point').val()
+// $(document)
+// .on('click','#btnGO',function(){
+//   alert("카운트다운이 시작됩니다.")
+//   gn=5;
+//   timer=setInterval(function(){
+//     if(gn<0){
+//       clearInterval(timer);      
+//       $('#btnGO').val("    시작    ");
+//       return;
+//     }
+//     $('#btnGO').val(gn)
+//     gn--;
+//   },1000)
+// })
+  // //document.getElementById('point').value='50'
+  // //k=$('#point').val()
   $(document)
-  .on('click','#btnShow',function(){
+  .ready(function(){
+    $('#point').val(50)
+    $('#btnClear').hide();
+  })
+  .on('click','#btnGO',function(){
     $('#point').val(100)
+    $(this).fadeOut(1000);
+    $('#btnClear').fadeIn(1000);
+    obj={'background-color':'lightgoldenrodyellow','color':'red'}
+    $('#point').css(obj)
+    $('#point').removeClass('style2')
+    $('#btnClear').addClass('style1')
+    $(this).css('background-color','lightgoldenrodyellow')
     //point text안에 100을 표시
   })
   .on('click','#btnClear',function(){
-    $('#point').val("")
+    $('#point').val("999")
+    $('#btnGO').fadeIn(1000);
+    $(this).fadeOut(1000);
+    $('#point').removeClass('style1')
+    $('#point').addClass('style2')
+    $('#btnGO').css('background-color','white')
+
     // point text안을 비운다
   })
 </script>
