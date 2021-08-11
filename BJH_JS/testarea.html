@@ -7,31 +7,22 @@
     <title>My first test</title>
 </head>
 <body>
-  <input type="text" name="point"  id="point"><br><br>
-  <input type="button" name="btnCalc" value="   Show   " onclick="getResult()">
-  <input type="button" name="btnInit" value="   Stop   " onclick="doStop()">
+  <input type="text" id="point" value="30"><br>
+  <input type="button" id="btnShow" value="Show"><br>
+  <input type="button" id="btnClear" value="Clear"
 </body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
-gn=0; let timer;
-  function getResult(){      
-      //setTimeout(showText,2000); //해당 함수를 밖으로 빼서 함수만 호출해서 쓰는 경우
-      alert("타이머가 시작됩니다.")
-      gn=1;
-      timer=setInterval(function(){
-      console.log(gn);
-      document.getElementsByName('point')[0].value=gn+"초가 지났습니다.";
-      gn+=1;
-  },1000)
-  }
-//   function showText(){
-//       console.log(gn);
-//       document.getElementsByName('point')[0].value=gn+"초가 지났습니다.";
-//       gn+=1;
-//   }
-  function doStop(){
-        clearInterval(timer);
-        document.getElementsByName('point')[0].value=""
-    }
-   
+  //document.getElementById('point').value='50'
+  //k=$('#point').val()
+  $(document)
+  .on('click','#btnShow',function(){
+    $('#point').val(100)
+    //point text안에 100을 표시
+  })
+  .on('click','#btnClear',function(){
+    $('#point').val("")
+    // point text안을 비운다
+  })
 </script>
 </html>

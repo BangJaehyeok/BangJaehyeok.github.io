@@ -1,5 +1,30 @@
 #### 20210811 (수) 작업
-- 인터벌 배우기
+- setInterval(showText,2000)이라고 한다면 showText는 호출이 아니라 콜백이다.
+- 콜백은 직접호출이 아니고 실행을 등록해놓고 조건이 맞으면 웹브라우저가 실행함
+- <form>태그 : 데이터를 서버프로그램에 전달하는 태그.
+- <input type=submit> : 방아쇠. form 태그 안의 모든 input의 값들이 데이터를 서버에 전달.
+- <input type=reset> : 입력태그를 비운다.
+- <form action="서버프로그램" method="post/get">
+- form태그의 action, method, submit 기억하기
+- 외부와 통신한다는 특징이 있다.
+========================================================
+- 제이쿼리 : 코딩을 덜하고 더 많은 일을 할 수 있는 효율적인 코딩을 위한 것.
+<script src="https://code.jquery.com/jquery-3.5.4.js">를 script에 해줘야 jquery를 쓸 수 있다.
+- 이벤트(event) 목록
+- blur : focus가 떠났을때
+- focus : 마우스 왼쪽버튼이 눌려서 focus가 들어왔을때. 커서가 깜빡이고 좀 더 진해짐.
+- click : 마우스 왼쪽버튼이 클릭됐을때
+- dlbclick : 마우스 왼쪽버튼이 더블클릭됐을때
+- change : html tag안의 값이 변경됐을때
+
+- HTML => 웹페이지의 UI구현
+- JS => 기능
+- 제이쿼리를 통해 기능은 기능만 모아두고, html은 html로 모아두는 것 그것이 트렌드.
+- $(document)
+  .on('click','#btnCalc',function(){
+    console.log('btnCalc 클릭')
+  }) <==여기에 세미콜론찍지말아라. 꼭!! 에러난다.
+- src인데 scr로 오타내서 에러내지말자. 먼저 확인해보자.
 
 
 #### 20210810 (화) 작업
