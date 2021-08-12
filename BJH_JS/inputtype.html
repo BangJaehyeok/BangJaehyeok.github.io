@@ -7,27 +7,76 @@
     <title>My first test</title>
 </head>
 <body>
-   <input type="text"><br>
-   <input type="radio" name="gender">남자<input type="radio" name="gender">여자<br>
-   <input type="radio" name="w_status" id="big">대기업<br>
-   <input type="radio" name="w_status">중견기업<br>
-   <input type="radio" name="w_status">중소기업<br>
-   <input type="radio" name="w_status">1인기업<br>
-   <input type="radio" name="w_status">프리랜서<br>
-   <input type="checkbox"><br>
-   <input type="file"><br>
-   <input type="password"><br>
-   <input type="submit"><br>
-   <input type="button" value="버튼"><br>
-   <input type="number"><br>
-   <input type="date"><br>
-   <select size="5" multiple>
-    <option>Korea</option>
-    <option>USA</option>
-    <option>France</option>
-   </select><br>
-   <textarea rows="10" cols="20"></textarea>
+   Text:<input type="text" id="txtName" value="park"><br>
+   Hidden:<input type="hidden" id="txtHidden" value="숨김"><br>
+   radio:<input type="radio" name="gender" id="male">남자&nbsp;
+   <input type="radio" name="gender" id="female">여자<br>
+   Number:<input type="number" id="txtNum" value="28"><br> 
+   <input type="checkbox" name="hobby" id="movie">영화보기<br>  
+   <input type="checkbox" name="hobby" id="riding">모터사이클<br>
+   <input type="checkbox" name="hobby" id="climbing">등산<br>
+   Textarea(주소):<br><textarea id=txtAddress rows=3 cols=60></textarea><br>
+   Select:<br><select id="selNation" size="5">
+    <option value="KR" selected>대한민국</option>
+    <option value="US">USA</option>
+    <option value="FR">France</option>
+    <option value="UK">England</option>
+   </select><br>   
+   <button id="btnShow">보기</button>&nbsp;
+   <button id="btnWrite">쓰기</button>
+   <div id="dvShow" style="background-color: yellow; 
+                        width: 300px; height: 200px;">
+   </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
+$(document)
+.on('click','#btnShow',function(){
+    str1=$('#txtName').val();
+    str2=$('#txtHidden').val();
+    if($('#male').is(':checked')){
+        str3='male';
+    } else if($('#female').is(':checked')){
+        str3='female';
+    } else {
+        //str3='';
+        alert("성별을 지정하십시오.");
+        return false;
+    }
+    str4=$('#txtNum').val();
+    str5='';
+    if($('#movie').is(':checked')){
+        str5+='영화보기';
+    }
+    if($('#riding').is(':checked')){
+        str5+='모터사이클';
+    }
+    if($('#climbing').is(':checked')){
+        str5+='등산';
+    }
+    if(str5==''){
+        alert("취미를 최소한 하나 선택하십시오");
+        return false;
+    }
+    str6=$('#txtAddress').val();
+    str7=$('#selNation').val();
+    str=str1+'<br>'+str2+'<br>'+str3+'<br>'+str4+'<br>'+str5+'<br>'+str6+'<br>'+str7;
+    $('#dvShow').html(str);
+})
+.on('click','#btnWrite',function(){
+    $('#txtName').val('Johanson')
+    $('#txtHidden').val('숨겨라')
+    $('#female').prop('checked',true);//cheked체크마크를 true표시해라
+    //check표시를 지우고 싶으면 true대신 false
+    $('#txtNum').val(150)//내부적으로 문자열로 변환해서 출력
+    $('#movie').prop('checked',true);
+    $('#climbing').prop('checked',true);
+    $('#txtAddress').val('천안시 동남구');
+    $('#selNation').val('US')
+})
+.on('blur','#txtName',function(){
+    alert($(this).val());//포커스가 빠져나갔을때 alert가 동작.val()는 해당 #txtName의 값을 리턴한다.
+    return false;
+})
 </script>
 </html>

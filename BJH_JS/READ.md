@@ -1,3 +1,44 @@
+#### 20210813 (금) 작업
+- 
+
+#### 20210812 (목) 작업
+- html5에서는 그냥 button이라는 태그가 지원이됨. <button id=btnShow>보기</button> 이렇게 작성된다.
+- radio 버튼이 여러개일때 어떤게 체크되어있는지 알려주는 것
+- If($('male').is(':chedked')){
+    str='male';
+}
+- Radio와 checkbox에서 미리 체크되어있는걸 원하면 checked를 마지막에 써준다.
+- select에서 미리 체크되어있는걸 원하면 selected를 써준다.
+- input 태그 중 text/hidden/number/date/datetime/money => .val()
+- input 태그 중 radio/checkbox => .is(':checked') -> true/false
+
+- div에서 div태그 영역 안에 텍스트를 쓸 때 주의할 점.
+- 1. .text태그로 .text("영화보기<br>모터사이클<br>등산")
+- 2. .html("영화보기<br>모터사이클<br>등산")
+
+- 1번의 방식으로 한다면 text태그 안의 모든 것을 문자열로 인식해서 <br>도 모두 문자열로 인식해서 한줄띄어쓰기가 인식안되고 한줄로 모두 표시된다.
+- 2번의 방식은 html태그 처리가 되어서 <br>이 정상적으로 처리된다.
+- &nbsp; : <br>태그가 한줄띄우기라면 &nbsp;는 공백처리해서 띄어쓰기해준다.
+
+- $('#female').prop('checked',true); cheked체크마크를 true표시해라
+    check표시를 지우고 싶으면 true대신 false
+- prop : 속성(property) => checked라는 특성에 true해라. false해라.
+- .on('blur','#txtName',function(){
+    alert($(this).val()); })
+- 포커스가 빠져나갔을때 alert가 동작한다.
+- val()는 괄호안의 값이 없을땐 해당 #txtName의 값을 리턴한다.
+
+- 만약 어떤 하나의 값을 입력안하고 넘어가면
+- if(str5==''){alert("취미를 최소한 하나 선택하십시오");
+        return false;}
+- 위처럼 해서 경고창을 띄워준다. 그리고 return false를 통해 해당 함수로 리턴해서 다른 함수가 실행되지 않게 리턴하게 한다.
+- 실행하다가 중간에 멈추게하려면 return false를 하게할것. 특히, 자바스크립트는
+- return;보다 return false;를 권장.
+- div태그의 스타일을 건드리지 않고 div태그 안의 내용들을 지우고 싶을 땐
+- .on('click','#btnClear',function(){
+    $('#divShow').empty();}) 로 코딩한다.
+
+
 #### 20210811 (수) 작업
 - setInterval(showText,2000)이라고 한다면 showText는 호출이 아니라 콜백이다.
 - 콜백은 직접호출이 아니고 실행을 등록해놓고 조건이 맞으면 웹브라우저가 실행함
