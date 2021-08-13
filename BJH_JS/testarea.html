@@ -28,7 +28,7 @@ td{
 </style>
 <body>
   <input type="button" id="btnAdd" value="Add">
-  <table id="tbl">
+  <table border=1 id="tbl">
     <tr><th>이름</th><th>모바일</th><th>수학점수</th></tr>
   </table>
   
@@ -39,8 +39,10 @@ td{
   .on('click','#btnAdd',function(){
       n1=prompt("이름을 입력하시오");       
       n2=prompt("모바일번호를 입력하시오");      
-      n3=prompt("수학점수를 입력하시오");        
-      $('#tbl').append('<tr><td>'+n1+'</td><td>'+n2+'</td><td>'+n3+'</td></tr>')      
+      n3=prompt("수학점수를 입력하시오");
+      str=`<tr><td>${n1}</td><td>${n2}</td><td>${n3}</td></tr>`        
+      $('#tbl').append(str)      
+      return false;
     })
   
 </script>

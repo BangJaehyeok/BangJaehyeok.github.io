@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<style>
+td {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+</style>
+<body>
+  <table border=2 id="tbl">
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  </table><br>
+  <input type="button" id="btnGO" value="채우기">
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+  n=1;
+  $(document)
+  .on('click','#btnGO',function(){
+    for(i=0;i<$('#tbl tr').length;i++){
+      if(i%2==0){
+      for(j=0;j<$('#tbl tr:eq(0) td').length;j++){        
+          $('#tbl tr:eq('+i+') td:eq('+j+')').text(n);
+          n++
+        } 
+      }else{
+      for(j=0;j<$('#tbl tr:eq(0) td').length;j++){        
+          $('#tbl tr:eq('+i+') td:eq('+j+')').text(n-1);
+          n--
+        }
+      } n=n+$('#tbl tr').length
+    }  
+  })
+      
+    
+      
+      // for(j=0;j<$('#tbl tr:eq(0) td').length;j++){
+      //   $('#tbl tr:eq(i) td:eq(j)').text(n);
+      //   n++
+      // }
+      // i++
+      // $('#tbl tr:eq(i) td:eq(j)').text(n);     
+  //   }
+  //   // 첫번째줄
+  //   // $('#tbl tr:eq(0) td:eq(0)').text(1)
+  //   // $('#tbl tr:eq(0) td:eq(1)').text(2)
+  //   // $('#tbl tr:eq(0) td:eq(2)').text(3)
+  //   // $('#tbl tr:eq(0) td:eq(3)').text(4)
+  //   // $('#tbl tr:eq(0) td:eq(4)').text(5)
+  //   // //두번째줄
+  //   // $('#tbl tr:eq(1) td:eq(0)').text(6)
+  //   // $('#tbl tr:eq(1) td:eq(1)').text(7)
+  //   // $('#tbl tr:eq(1) td:eq(2)').text(8)
+  //   // $('#tbl tr:eq(1) td:eq(3)').text(9)
+  //   // $('#tbl tr:eq(1) td:eq(4)').text(10)
+  //   // //세번째줄
+  //   // $('#tbl tr:eq(2) td:eq(0)').text(11)
+  //   // $('#tbl tr:eq(2) td:eq(1)').text(12)
+  //   // $('#tbl tr:eq(2) td:eq(2)').text(13)
+  //   // $('#tbl tr:eq(2) td:eq(3)').text(14)
+  //   // $('#tbl tr:eq(2) td:eq(4)').text(15)
+  //   // //네번째줄
+  //   // $('#tbl tr:eq(3) td:eq(0)').text(16)
+  //   // $('#tbl tr:eq(3) td:eq(1)').text(17)
+  //   // $('#tbl tr:eq(3) td:eq(2)').text(18)
+  //   // $('#tbl tr:eq(3) td:eq(3)').text(19)
+  //   // $('#tbl tr:eq(3) td:eq(4)').text(20)
+
+  // })
+</script>
+</html>

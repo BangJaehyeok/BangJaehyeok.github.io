@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<style>
+td {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+</style>
+<body>
+  <!-- <table border=2 id="tbl">
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  </table><br> -->
+  <input type="button" id="btnGO" value="채우기">
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+//prompt로 n값을 읽는다
+//client영역에 nXn의 테이블을 그린다
+//시계방향으로 돌면서 값을 채운다
+let n;
+  $(document)
+.ready(function(){
+    document.write("<table id=tbl border=1></table>");
+    n=parseInt(prompt("행/열의 갯수를 입력하시오."));
+    for(i=0;i<n;i++){
+        $('#tbl').append('<tr></tr>')
+        for(j=0;j<n;j++){
+            $('#tbl tr:eq('+i+')').append('<td style="width:80px;height:80px"></td>');
+        }
+    }
+})
+
+  .on('click','#btnGO',function(){
+    for(i=0;i<$('#tbl tr').length;i++){        
+      for(j=0;j<$('#tbl tr:eq(0) td').length;j++){        
+          $('#tbl tr:eq('+i+') td:eq('+j+')').text(n);
+          n++
+        }
+        if(j==4){
+            for(i=0;i<i<$('#tbl tr').length;i++){
+                $('#tbl tr:eq('+i+') td:eq('+j+')').text(n);
+            }        
+      }
+      n=n+$('#tbl tr').length 
+      }      
+    }
+)
+</script>
+</html>
