@@ -4,200 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My first test</title>
+    <title>test</title>
 </head>
 <style>
-  .style1 
-  {background-color:lightgoldenrodyellow;
-  color:red
-};
-  .style2 
-  {background-color : white; 
-  color:blue
-  };
+table {
+  border-collapse: collapse;
+}
+th {
+  border: 1px solid white;
+  background-color: black;
+  color:lightgoldenrodyellow;
+  width: 150px;
+  height: 45px;
+  
+}
+td{
+  border:1px solid black;
+  width: 80px;
+  height: 40px;
+  padding-left: 15px;
+  font-weight: bold;
+}
 </style>
 <body>
-  <div style="border: solid 1px green; padding-left: 10px;
-   padding-top: 10px; float: left;
-    width: 400px; height: 600px; ">
-  이름(실명) :&nbsp;&nbsp;&nbsp;<input type="text" id="txtName"><br>
-  모바일 번호 :&nbsp;<input type="text" id="txtPhone"><br> 
-  성별 :&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="male">남성&nbsp;
-   <input type="radio" name="gender" id="female">여성<br><br>
-   생일 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtBirth"><br><br>
-  거주지역 :&nbsp;&nbsp;<select id="register" size="1" style="width: 100px;">
-    <option>경기도</option>
-    <option>강원도</option>
-    <option>충청남도</option>
-    <option>충청북도</option>
-    <option>경상남도</option>
-    <option>경상북도</option>
-    <option>서울특별시</option>
-    <option>부산광역시</option>
-    <option>대전광역시</option>
-    <option>광주광역시</option>
-    <option>대구광역시</option>
-    <option>인천광역시</option>
-   </select><br><br>
-  관심분야 :&nbsp;&nbsp;<input type="checkbox" name="interest" id="credit">재테크&nbsp;  
-  <input type="checkbox" name="interest" id="home">부동산&nbsp;
-  <input type="checkbox" name="interest" id="stock">주식&nbsp;
-  <input type="checkbox" name="interest" id="bill">채권<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="checkbox" name="interest" id="option">선물/옵션&nbsp;
-  <input type="checkbox" name="interest" id="abroad">해외투자&nbsp;  
-  <input type="checkbox" name="interest" id="gongmo">공모주<br>
-  취미 : &nbsp;&nbsp;<input type="checkbox" name="hobby" id="golf">골프&nbsp;
-  <input type="checkbox" name="hobby" id="swim">수영&nbsp;  
-  <input type="checkbox" name="hobby" id="fitness">피트니스&nbsp;
-  <input type="checkbox" name="hobby" id="climbing">등산<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="checkbox" name="hobby" id="movie">영화&nbsp;
-  <input type="checkbox" name="hobby" id="riding">라이딩<br>
-  <br>
-  <br>
-  비밀번호 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="password1"><br>
-  비밀번호 확인 : <input type="password" id="password2"><br><br><br>
-  <button id="btnShow">보기</button>&nbsp;&nbsp;
-  <button id="btnClear" style="height: 24px;">Clear</button>
-</div>
-<div id="divShow" style="float: left; padding-left: 10px; 
-padding-top: 10px; margin-left: 20px; width: 300px; 
-height: 600px; border: solid 1px purple;">
-</div>   
+  <input type="button" id="btnAdd" value="Add">
+  <table id="tbl">
+    <tr><th>이름</th><th>모바일</th><th>수학점수</th></tr>
+  </table>
+  
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
   $(document)
-  .on('click','#btnShow',function(){
-    n1=$('#txtName').val();
-    n2=$('#txtPhone').val();
-    if(n1==''){
-        alert("이름을 입력해주세요");
-        return false;
-    }
-    if(n2==''){
-        alert("핸드폰번호를 입력해주세요");
-        return false;
-    }
-    if($('#male').is(':checked')){
-        n3='남성';
-    } else if($('#female').is(':checked')){
-        n3='여성';
-    } else {
-        alert("성별을 지정하십시오.");
-        return false;
-    }
-    n4=$('#txtBirth').val();
-    n5=$('#register').val();
-    if(n4==''){
-        alert("생일을 입력하세요");
-        return false;
-    }
-    n6='';
-    if($('#credit').is(':checked')){
-        n6+='재테크 ';
-    }
-    if($('#home').is(':checked')){
-      n6+='부동산 ';
-    }
-    if($('#stock').is(':checked')){
-      n6+='주식 ';
-    }
-    if($('#bill').is(':checked')){
-      n6+='채권 ';
-    }
-    if($('#option').is(':checked')){
-      n6+='선물/옵션 ';
-    }
-    if($('#abroad').is(':checked')){
-      n6+='해외투자 ';
-    }
-    if($('#gongmo').is(':checked')){
-      n6+='공모주 ';
-    }
-    if(n6==''){
-        alert("관심분야를 최소한 하나 선택하십시오");
-        return false;
-    }
-    n7='';
-    if($('#swim').is(':checked')){
-        n7+='수영 ';
-    }
-    if($('#fitness').is(':checked')){
-        n7+='피트니스 ';
-    }
-    if($('#climbig').is(':checked')){
-        n7+='등산 ';
-    }
-    if($('#movie').is(':checked')){
-        n7+='영화 ';
-    }
-    if($('#riding').is(':checked')){
-        n7+='라이딩 ';
-    }
-    if(n7==''){
-        alert("취미를 최소한 하나 선택하십시오");
-        return false;
-    }
-    n8=$('#password1').val();
-    n9=$('#password2').val();
-    if(n8!=n9){
-      alert("입력하신 비밀번호가 다릅니다. 다시 입력해주세요")
-      return false;
-    }
-    if(n8==''){
-        alert("비밀번호를 입력해주세요");
-        return false;
-    }
-      
-
-  n='이름 :'+n1+'<br>'+'모바일번호 :'+n2+'<br>'+'성별 :'+n3+'<br>'+'생일 :'+n4+'<br>'+'거주지 :'+n5
-  +'<br>'+'관심분야 :'+n6+'<br>'+'취미 :'+n7
-  $('#divShow').html(n);
-  })
-  .on('click','#btnClear',function(){
-    $('#divShow').empty();
-  })
-// $(document)
-// .on('click','#btnGO',function(){
-//   alert("카운트다운이 시작됩니다.")
-//   gn=5;
-//   timer=setInterval(function(){
-//     if(gn<0){
-//       clearInterval(timer);      
-//       $('#btnGO').val("    시작    ");
-//       return;
-//     }
-//     $('#btnGO').val(gn)
-//     gn--;
-//   },1000)
-// })
-  // //document.getElementById('point').value='50'
-  // //k=$('#point').val()
-  // $(document)
-  // .ready(function(){
-  //   $('#point').val(50)
-  //   $('#btnClear').hide();
-  // })
-  // .on('click','#btnGO',function(){
-  //   $('#point').val(100)
-  //   $(this).fadeOut(1000);
-  //   $('#btnClear').fadeIn(1000);
-  //   obj={'background-color':'lightgoldenrodyellow','color':'red'}
-  //   $('#point').css(obj)
-  //   $('#point').removeClass('style2')
-  //   $('#btnClear').addClass('style1')
-  //   $(this).css('background-color','lightgoldenrodyellow')
-  //   //point text안에 100을 표시
-  // })
-  // .on('click','#btnClear',function(){
-  //   $('#point').val("999")
-  //   $('#btnGO').fadeIn(1000);
-  //   $(this).fadeOut(1000);
-  //   $('#point').removeClass('style1')
-  //   $('#point').addClass('style2')
-  //   $('#btnGO').css('background-color','white')
-
-  //   // point text안을 비운다
-  // })
+  .on('click','#btnAdd',function(){
+      n1=prompt("이름을 입력하시오");       
+      n2=prompt("모바일번호를 입력하시오");      
+      n3=prompt("수학점수를 입력하시오");        
+      $('#tbl').append('<tr><td>'+n1+'</td><td>'+n2+'</td><td>'+n3+'</td></tr>')      
+    })
+  
 </script>
 </html>

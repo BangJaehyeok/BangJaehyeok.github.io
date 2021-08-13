@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first test</title>
+</head>
+<style>
+td {
+  width: 100px;
+  height: 50px;
+}
+</style>
+<body>
+  <table border=2 id="tbl">
+    <tr><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td></tr>
+    <tr><td><input type="button" id="btnPreDelete" value="PreDelete">
+      <input type="button" id="btnLastDelete" value="LastDelete"></td>
+    <td><button id="btnPreppend" value="Prepend">Prepend</button></td>
+    <td><input type="button" id="btnGO" value="GO"></td></tr>
+  </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+  $(document)
+  .ready(function(){})
+  .on('click','#btnGO',function(){
+    $('#tbl').append('<tr><td>A</td><td>B</td><td>C</td></tr>')
+    return false;
+  })
+  .on('click','#btnPreDelete',function(){ //event handler
+    $('#tbl').find('tr:first').remove();
+    return false;
+  })
+  .on('click','#btnLastDelete',function(){
+    $('#tbl').find('tr:last').remove();
+    return false;
+  })
+  .on('click','#btnPreppend',function(){
+    n=1;
+    $('#tbl').prepend('<tr><td>'+(n++)+'</td><td>'+(n++)+'</td><td>'+(n++)+'</td></tr>');
+    return false;
+  })
+</script>
+</html>

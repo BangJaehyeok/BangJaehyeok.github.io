@@ -1,12 +1,22 @@
 #### 20210813 (금) 작업
-- 
+- id= txtin
+- k=$('#txtin').val(); //getter 가져오는값은 항상 문자열
+- $('#txtin').val('10'); //setter 이것도 문자열
+
+- head, style, body, script 
+- HTML이 계층적 구조를 가지는 것을 DOM(Document Object Model)이라고 한다.
+- 웹페이지를 구성하는 태그들이 트리구조를 가지는 것.
+- 동적인 HTML 핸들링(조작)
+
+- $('#tbl').append('<tr><td>A</td><td>B</td><td>C</td></tr>')
+- 한줄 추가하기 위한 코드. append를 통해 한 줄 추가한다.
+- .find('tr:last').remove(); tr태그 중 last(마지막)을 찾아라. 그리고 remove해라.
 
 #### 20210812 (목) 작업
 - html5에서는 그냥 button이라는 태그가 지원이됨. <button id=btnShow>보기</button> 이렇게 작성된다.
 - radio 버튼이 여러개일때 어떤게 체크되어있는지 알려주는 것
 - If($('male').is(':chedked')){
-    str='male';
-}
+    str='male';}
 - Radio와 checkbox에서 미리 체크되어있는걸 원하면 checked를 마지막에 써준다.
 - select에서 미리 체크되어있는걸 원하면 selected를 써준다.
 - input 태그 중 text/hidden/number/date/datetime/money => .val()
@@ -15,6 +25,8 @@
 - div에서 div태그 영역 안에 텍스트를 쓸 때 주의할 점.
 - 1. .text태그로 .text("영화보기<br>모터사이클<br>등산")
 - 2. .html("영화보기<br>모터사이클<br>등산")
+- text() : 문자열 그대로 표시
+- html() : 문자열을 html태그로 인식/화면에 그리기.
 
 - 1번의 방식으로 한다면 text태그 안의 모든 것을 문자열로 인식해서 <br>도 모두 문자열로 인식해서 한줄띄어쓰기가 인식안되고 한줄로 모두 표시된다.
 - 2번의 방식은 html태그 처리가 되어서 <br>이 정상적으로 처리된다.
