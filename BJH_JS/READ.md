@@ -1,3 +1,9 @@
+#### 알아야할 사항
+- 깃헙 커밋암호
+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
+
+회의 참가 id : 425 532 9777
+
 #### 20210813 (금) 작업
 - id= txtin
 - k=$('#txtin').val(); //getter 가져오는값은 항상 문자열

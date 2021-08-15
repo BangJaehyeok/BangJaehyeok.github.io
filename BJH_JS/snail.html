@@ -42,24 +42,7 @@ let n=5;
 //     }
 // })
 .on('click','#btnGO',function(){
-  for(n=5;n>0;n--){
-    for(i=0;i<n;i++){
-      for(j=0;j<n;j++){
-        if(n==5&&i==0){
-          $('#tbl tr:eq('+i+') td:eq('+j+')').text(a);
-          a++
-        }
-        if(n==5&&j==4){
-          $('#tbl tr:eq('+i+') td:eq('+j+')').text(a-1);
-          a++
-        }
-        if(i==4&&j<=4){
-          $('#tbl tr:eq('+i+') td:eq('+j+')').text(a-2+(n));
-          a--
-        }
-      }
-    } 
-  }
+  
 })
 
 </script>
