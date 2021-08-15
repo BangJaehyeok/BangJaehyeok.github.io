@@ -14,13 +14,13 @@ td {
 }
 </style>
 <body>
-  <!-- <table border=2 id="tbl">
+  <table border=2 id="tbl">
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
-  </table><br> -->
+  </table><br>
   <input type="button" id="btnGO" value="채우기">
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -28,33 +28,39 @@ td {
 //prompt로 n값을 읽는다
 //client영역에 nXn의 테이블을 그린다
 //시계방향으로 돌면서 값을 채운다
-let n;
+let a=1;
+let n=5;
   $(document)
-.ready(function(){
-    document.write("<table id=tbl border=1></table>");
-    n=parseInt(prompt("행/열의 갯수를 입력하시오."));
+// .ready(function(){
+//     document.write("<table id=tbl border=1></table>");
+//     n=parseInt(prompt("행/열의 갯수를 입력하시오."));
+//     for(i=0;i<n;i++){
+//         $('#tbl').append('<tr></tr>')
+//         for(j=0;j<n;j++){
+//             $('#tbl tr:eq('+i+')').append('<td style="width:80px;height:80px"></td>');
+//         }
+//     }
+// })
+.on('click','#btnGO',function(){
+  for(n=5;n>0;n--){
     for(i=0;i<n;i++){
-        $('#tbl').append('<tr></tr>')
-        for(j=0;j<n;j++){
-            $('#tbl tr:eq('+i+')').append('<td style="width:80px;height:80px"></td>');
+      for(j=0;j<n;j++){
+        if(n==5&&i==0){
+          $('#tbl tr:eq('+i+') td:eq('+j+')').text(a);
+          a++
         }
-    }
+        if(n==5&&j==4){
+          $('#tbl tr:eq('+i+') td:eq('+j+')').text(a-1);
+          a++
+        }
+        if(i==4&&j<=4){
+          $('#tbl tr:eq('+i+') td:eq('+j+')').text(a-2+(n));
+          a--
+        }
+      }
+    } 
+  }
 })
 
-  .on('click','#btnGO',function(){
-    for(i=0;i<$('#tbl tr').length;i++){        
-      for(j=0;j<$('#tbl tr:eq(0) td').length;j++){        
-          $('#tbl tr:eq('+i+') td:eq('+j+')').text(n);
-          n++
-        }
-        if(j==4){
-            for(i=0;i<i<$('#tbl tr').length;i++){
-                $('#tbl tr:eq('+i+') td:eq('+j+')').text(n);
-            }        
-      }
-      n=n+$('#tbl tr').length 
-      }      
-    }
-)
 </script>
 </html>
