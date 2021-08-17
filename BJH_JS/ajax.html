@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="userid"><br>
+    <input type="password" name="passcode"><br>
+    <input type="button" value="login" id="btnLogin"><br>
+    <input type="reset" value="clear">
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+    $(document)
+    .on('click','#btnLogin',function(){
+        $.ajax({ //standard ver.
+            method:'get',
+            url : 'http;//',
+            data:'userid='+$('#input[name=userid]').val()+
+                '&passcode='+$('input[name=passcode]').val(), //data for server
+            dataType: 'text',
+            success:function(){//server가 제대로 응답 try
+                console.log(txt)
+                alert(txt)
+                $('#tbl tr:eq(0) td:eq(1)').text(txt)
+            },
+            error:function(){// server가 응답을 안하거나, 에러가 발생 catch
+                alert('에러발생');
+            },                
+            complete:function(){// 모든것(success/error)실행 후 후처리. finally
+                alert('ajax호출완료')
+            }
+        })
+    });
+    $.post('http//',//simple ver.
+            {userid:$('#input[name=userid').val(),
+            passcode:$('input[name=passcode]').val()},
+            function(txt){
+
+            },'text') //datatype
+    $.get('http//',//simple ver.
+            {userid:$('#input[name=userid').val(),
+            passcode:$('input[name=passcode]').val()},
+            function(txt){
+
+            },'text') //datatype
+</script>
+</html>

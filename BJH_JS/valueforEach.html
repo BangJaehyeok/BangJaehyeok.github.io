@@ -102,8 +102,38 @@ $('table tr').even().css('background-color','cyan');
 //   $('div:eq(0)').show();
 //   return false;
 // })
-.on('mousemove','body',function(e){
-  console.log(e.clientX+','+e.clientY);
+// .on('mousemove','body',function(e){
+//   console.log(e.clientX+','+e.clientY);
+//   return false;
+// })
+// .on('click','td',function(){
+//   j=$(this).index();
+//   i=$(this).parent().index();
+//   console.log(i+','+j)
+//   return false;
+// })
+ar=[1,2,3]
+ar1='123'
+ob={};
+document.write('ar='+$.isArray(ar));document.write('<br>');
+document.write('ar1='+$.isArray(ar1))
+
+document.write('empty(ob)='+$.isEmptyObject(ob)); document.write('<br>');
+
+str='abc123'
+str1='123'
+st2=123;
+document.write(str+'='+isNan(str));document.write('<br>');
+document.write(str1+'='+isNan(str1));document.write('<br>');
+document.write('<br>');document.write('<br>');
+document.write(str+':'+$.isNumeric(str));document.write('<br>');
+document.write(str1+':'+$.isNumeric(str1));document.write('<br>');
+document.write(st2+':'+$.isNumeric(st2));document.write('<br>');
+
+$(window)
+.resize(function(){
+  console.log($(window).width()+','+$(window).height());
+  $('#btnGo').css({position:relative})
   return false;
 })
 

@@ -4,7 +4,61 @@ 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
 
 회의 참가 id : 425 532 9777
 
-#### 20210816(월) 작업
+#### 20210817 (화) 작업
+- $.isNumeric(변수):변수가 숫자면 true, 문자열이면 false
+- $.isArray() : 변수면 true, 아니면 false
+- inArray(찾고자하는 것) : 괄호안의 문자,숫자가 배열안에 있으면 1, 없으면 -1
+- trim() : '    hello world    '라는 문자열의 앞뒤 공백을 없앤채 출력하게 도와줌
+- ex) 'hello world' 중간의 공백은 없애주지 않음
+
+- 자바스크립트로 서버와 통신(data전달)
+- HTML <-> Server통신
+- <form method=post/get action=서버프로그램>
+- <input type=submit/reset>
+</form>
+- form태그는 서버로 데이터를 submit해서 서버와 통신하게되어 좋았지만 전체화면이 refresh되어서 번거로운 단점이 있다.
+- 그래서 javascript <-> Server 통신(data전달)을 생각해냄
+- Ajax(Asynchronous Javascript And XML)
+- XML -> HTML의 확장판
+- ajax의 예 -> 네이버 로그인할때 전체화면이 다 날아오는게 아니라 로그인이 된 곳만 바뀌어서 회원정보가 표기되는부분만 날아와서 주고받는 데이터가 감소됨. 서버의 과부하가 덜 일어남.
+- 데이터가 적으면 text, 많으면 JSON, 엄청 많으면 XML로 주고받는다. 거의 JSON이면 해결된다.
+- 그래서 요즘은 form태그를 잘 안쓴다. ajax처리한다.
+
+- 쿼리스트링(QueryString) = 서버프로그램에게 보내는 값들의 리스트
+- 프로그램 경로명?key1=value1&key2=value2&key3=&key4=value4....
+- {key1:value1,key2:value2,key3:value3,...}
+
+========================================
+
+- sql설치 그리고 초기설정
+
+- sql설치하고 명령프롬프트 on
+- sqlplus 입력
+- user-name : system
+- password : apmsetup
+그다음
+- create tablespace myts datafile 'c:\temp\myts.dbf' size 100m autoextend on next 5m;
+- => 내가 작업한 내역이 해당 주소의 파일로 저장되고, 초기사이즈가 100mb할당되며 만약 초과된다면 5MB씩 자동으로 계속 용량이 추가할당된다.
+이거 입력
+- Tablespace created가 뜬다.
+- 그리고
+- create user ora_user identified by human123
+- default tablespace myts
+- temporary tablespace temp
+- ;
+- 이러면 user created라고한다.
+- 위 명령어들은 일반user를 만드는 명령어다.
+
+- 위의 system은 sql의 완전한 관리자이며 ora_user라는 것을 만들었다.
+- 보통은 유저등급을 하나 만들어서 거기서 작업하고 그 이후에 특별한 일이 있으면 system을 만든 것이다.
+
+- grant dba to ora_user; 를 입력하면 ora_user에게 거의 admin에 해당하는 권한을 부여한다.
+
+- Database(Oracle) - SQL Developer - Human
+- 데이터베이스와 사람사이를 이어주는 프로그램이 SQL디벨로퍼다. 즉, SQL디벨로퍼는 데이터베이스 그 자체는 아니다.
+
+
+#### 20210816 (월) 작업
 - rowspan : 표에서 위와 아래의 셀을 합치는 명령어
 - <td rowspan=2> 해당 td가 아래로 2칸을 차지해서 위가 아래를 먹는 형상으로 합쳐진다.
 - 그리고 합쳐진 밑의 칸 td는 삭제해야한다.
