@@ -14,13 +14,13 @@ td {
 }
 </style>
 <body>
-  <table border=2 id="tbl">
+  <!-- <table border=2 id="tbl">
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
     <tr><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td></tr>
-  </table><br>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>    
+  </table><br> -->
   <input type="button" id="btnGO" value="채우기">
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -28,22 +28,49 @@ td {
 //prompt로 n값을 읽는다
 //client영역에 nXn의 테이블을 그린다
 //시계방향으로 돌면서 값을 채운다
-let a=1;
-let n=5;
+let ne=ns=n;
+let nw=nn=0//동서남북의 값을 변수4개로 지정한다.
+let way='E';
+x=y=0;
+
   $(document)
-// .ready(function(){
-//     document.write("<table id=tbl border=1></table>");
-//     n=parseInt(prompt("행/열의 갯수를 입력하시오."));
-//     for(i=0;i<n;i++){
-//         $('#tbl').append('<tr></tr>')
-//         for(j=0;j<n;j++){
-//             $('#tbl tr:eq('+i+')').append('<td style="width:80px;height:80px"></td>');
-//         }
-//     }
-// })
-.on('click','#btnGO',function(){
-  
+.ready(function(){
+    document.write("<table id=tbl border=1></table>");
+    n=parseInt(prompt("행/열의 갯수를 입력하시오."));
+    for(i=0;i<n;i++){
+        $('#tbl').append('<tr></tr>')
+        for(j=0;j<n;j++){
+            $('#tbl tr:eq('+i+')').append('<td style="width:80px;height:80px"></td>');
+        }
+    }
 })
+.on('click','#btnGO',function(){
+  for(i=1;i<=n*n;i++){
+    $('#tbl tr:eq(${x}) td:eq(${y})').text(i);
+    if(way=='E'){
+        y++
+        if(y>=ne){
+          y--; way='S'; x++; ne--;
+        }
+     }else if(way=='W'){
+      y--;
+      if(y<=nw){
+        y++;x--;way='N';nw++;
+      }
+     }else if(way=='S'){
+       x++;
+       if(x>=ns){
+         x--;y--;way='W';ns--;
+       }
+     }else if(way=='N'){
+       x--;
+       if(x<=nn){
+         x++;y++;way='E';nn++;
+       }        
+    }
+  }
+    
+  })
 
 </script>
 </html>

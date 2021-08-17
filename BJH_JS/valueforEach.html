@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<style>
+td {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+.redColor{
+  background-color: red;
+}
+</style>
+<body>
+  <input type="text" name="txtName" value="레드벨벳"><br>
+  <input type="radio" name="txtGender">성별<br>
+  <input type="checkbox" name="chkName">체크박스<br>
+  <!-- <table border=2 id="tbl">
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>    
+  </table><br><br> -->
+  <input type="button" id="btnGo" value="alternative"><br>
+  <div style="width: 300px;height: 100px;background-color: yellow;display: none;"></div>
+  <div style="width: 300px;height: 100px;background-color: green;"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+// let bcolor;
+// var ar=[9,8,7,6,5,4,3,2,1,0]
+// var student={name:'jaehyeok',age:22,gender:'male',mobile:'01022225555'};
+a=1;
+k=1;
+
+
+$(document)
+.ready(function(){
+    // for(i=0;i<ar.length;i++){
+    //     document.write(ar[i]+'<br>')
+    // }
+//    for(value of ar){
+//        document.write(value+'<br>')
+//    }
+//    ar.forEach(function(index,value){
+//         document.write(index+'='+value+'<br>')
+//    })
+    // ar.forEach(function(vale){
+    //     document.write(value+'<br>')
+    // })
+    // $.each(student,function(index,value){
+    //     document.write(index+'='+value+'<br>')
+    // })
+//     k=1
+//     $('#tbl tr').each(function(){
+//       $(this).find('td').each(function(){//여기 this는 tr을 가리키는 this
+//           $(this).text(k++);//여기 this는 td를 가리키는 this
+//       })
+//     })
+// })
+$('input[name^=txt]').css('background-color','red')//name의 앞부분에 txt가 들어간 모든 것
+$('input[name$=Name]').css('color','yellow');//name의 뒷부분에 Name이 있는 모든 것
+$('input[name*=Name]') //name안에 어디든 일단 Name이 들어간 모든 것
+$('table tr').odd().css('background-color','yellow');
+$('table tr').even().css('background-color','cyan');
+
+//table의 tr의 짝수 인덱스 요소를 선택해 배경색을 cyan으로 바꾼다.
+//홀수번째 인덱스 요소 선택은 .odd()이다.
+})
+
+// .on('mouseenter','table tr',function(){
+//   bcolor=$(this).css('background-color');
+//   $(this).css('background-color','brown');
+//   return false;
+// })
+
+// .on('mouseleave', 'table tr',function(){
+//   $(this).css('background-color',bcolor);
+//   return false;
+// })
+
+// .on('click','table tr td',function(){ 
+//   if($(this).text()==''){
+//     $(this).text(a++);
+//     $('#txtNum').trigger('click');
+//   }
+//   return false;
+// })
+// .on('click','#txtNum',function(){
+//   $(this).toggleClass('redColor') //addClass+removeClass 반짝반짝 반복
+//   $(this).val(a);
+// })
+// .on('click','#btnGo',function(){
+//   $('div:visible').hide();
+//   $('div:eq(0)').show();
+//   return false;
+// })
+.on('mousemove','body',function(e){
+  console.log(e.clientX+','+e.clientY);
+  return false;
+})
+
+</script>
+</html>

@@ -4,6 +4,86 @@ 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
 
 회의 참가 id : 425 532 9777
 
+#### 20210816(월) 작업
+- rowspan : 표에서 위와 아래의 셀을 합치는 명령어
+- <td rowspan=2> 해당 td가 아래로 2칸을 차지해서 위가 아래를 먹는 형상으로 합쳐진다.
+- 그리고 합쳐진 밑의 칸 td는 삭제해야한다.
+- 만약 4줄먹는다면 4줄 먹는만큼의 밑의 td들을 삭제해야한다.
+- colspan : 표에서 좌우의 셀을 합치는 명령어
+- colspan도 rowspan처럼 해줘야한다.
+- <td colsapn=3> 그리고 먹은만큼 같은 tr의 td들을 삭제해준다.
+
+- $('#tbl').find('tr:eq(1) td:eq(2)').text('A');
+- $('#tbl tr.eq(1) td:eq(2)').text('A');
+- 위와 아래 둘다 같은 결과를 나타낸다.
+
+- snail의 기본개념 : 동서남북
+
+- 제이쿼리의 $(document).ready는 가장 마지막에 실행된다. 그래서 body에 뭐가있든지 다 없애버리고 지만 남는다.
+- 그래서 .ready안에 document.write쓰지말고
+- .ready(function(){
+    $('body').append('커맨드센터')
+}) 이렇게 해서 나타내줘야한다.
+
+- #:id , .:class 아무것도 없는 : tag
+- $('#tbl') : id가 tbl인 element
+- $('.board') : class가 board인걸 가진 element
+- $('body'), $('form') : 해당 태그들을 다 가져옴.
+- $('input[name=txtName]').val('park') : input태그중에 name이 txtName인 태그에다가 park를 집어넣어라. name만 지정되어있을때 name 호출방법은 이러하다.
+- $('input[name=txtName]:first').val('park') txtName을 가진 input 태그들 중에 가장 첫번째에 park 값을 집어넣는다.
+- $('input[name=txtName]:last').val('park') txtName을 가진 input 태그들 중에 가장 마지막에 park 값을 집어넣는다.
+- $('input[name=txtName].last').val('park') txtName 이름을 가지고 클래스가 last인 input 태그에 park값을 집어넣는다.
+
+- 배열에 관련해서 표시하는 방법은 valueforEach파일을 참고
+
+- k=1
+  $('#tbl tr').each(function(){
+    $(this).find('td').each(function(){//여기 this는 tr을 가리키는 this
+      $(this).text(k++);//여기 this는 td를 가리키는 this
+    })
+  })
+- 제이쿼리를 잘 알려주는 가장 좋은 예문.
+
+- 정규표현식(Regular Expression) : 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식 언어.
+- 검색할때 대소문자 구분없이 쓴다. "[Tt]he"
+- a* : a로 시작하는 모든 단어 *: 0개 이상의 모든 문자
+- . -> 한개의 문자
+- {n} -> 반복횟수
+- []: 또는
+- ^ -> ~로 시작하는
+$ -> ~로 끝나는
+
+- $('table tr').even().css('background-color','cyan');
+- table의 tr의 짝수 인덱스 요소를 선택해 배경색을 cyan으로 바꾼다.
+- 홀수번째 인덱스 요소 선택은 .odd()이다.
+
+```
+.on('click','table tr td',function(){ 
+  if($(this).text()==''){
+    $(this).text(a);
+    a++
+  }
+  return false;
+})
+
+```
+- 이거 잘 외워두자.
+- 특히, if($(this).text()==''){ 여기서 $(this).text()
+
+- close : 가깝다.
+- closest 가장 가까운
+- 표의 트리구조에서 가장 가까운 조상을 찾는것. 형제는 안찾음.
+- $('#here').closet('table').prop('id'); => here아이디를 가진 녀석의 조상 중 가장 가까운 table의 id를 찾아 써라.
+
+- trigger를 통해서 중복된 코드를 방지하고, 코드를 절약할 수 있다.
+- append prepend : table의 안쪽이지만 tr,td보다 앞서서 찍히는것이 prepend, tr,td의 가장 뒤에 찍히는 것이 append 기준 태그의 안쪽 앞뒤에 추가
+- after before : table의 바깥쪽에서 가장 앞이 before, table의 바로 밑부분에 after. 기준태그의 바깥 앞뒤에 추가.
+
+- appendTo()와 append()는 서로 입력할 변수의 자리가 앞뒤로 바뀐것.
+
+- gt(greater than) : ~보다 큰
+- lt(less than) : ~보다 작은
+
 #### 20210813 (금) 작업
 - id= txtin
 - k=$('#txtin').val(); //getter 가져오는값은 항상 문자열
