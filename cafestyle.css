@@ -1,41 +1,5 @@
-/* 객실관리홈페이지 css설정 */
 
-#nav{    
-    width: 30%;
-    height: 600px;
-    float: left;
-    margin-left: 50px;
-}
-#nav #roomlist{
-    width: 250px;
-    padding-left: 10px;
-    border: solid 1px black;
-}
-#sectionMenu{
-    width:10%;
-    height: 600px;
-    float: left;
-    margin-left: 20px;
-}
-#sectionMenu h2{
-    font-size: 20px;
-}
-#section{
-    width: 30%;
-    height: 600px;
-    text-align: left;
-    float: left;
-    padding: 10px;
-    margin-left: 10px;
-    padding-top: 15px;
-}
-#footer{
-   
-    height: 100px;
-    clear: both;
-}
-/* 객실관리홈페이지 설정 끝 */
-/* 여기부터는 예약관리의 css설정 */
+/* 카페메뉴 css설정 */
 #header{
     height: 125px; 
     text-align: center;
@@ -48,17 +12,16 @@
     height: 700px;
     float: left;
     margin-left: 50px;
-    margin-top: 10px;
 }
-#nav2 #findRoom{
+#nav2 #selectMenu{
     width: 250px;
     padding-left: 10px;
+    padding-top: 5px;
     border: solid 1px black;
 }
-#nav2 #reserveRoom{
+#nav2 #orderBlock{
     width: 250px;
     padding-left: 10px;
-    margin-top: 50px;
     border: solid 1px black;
 }
 #sectionMenu2{
@@ -67,19 +30,16 @@
     float: left;
     
 }
-#sectionMenu2 h2{
-    font-size: 20px;
-}
 #section2{
     width: 30%;
     height: 700px;
-    text-align: left;
-    float: left;    
-    margin-left: 10px;
-    
+    float: left;
+    margin-left: 40px; 
 }
-#footer2{
-   
-    height: 100px;
-    clear: both;
+#sellOrder{
+    border: solid 1px black;
+    width: 300px;
+    height:500px;
+    font-size: 18px;
+    font-weight: bold;
 }
