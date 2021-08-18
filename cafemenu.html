@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약관리</title>
+    <link href="cafestyle.css" rel="stylesheet" type="text/css" />
+    <style>
+        .menu a{cursor:pointer;}
+        .menu .hide{display:none;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 style="font-size: 40px;">카페관리프로그램</h1><br>
+    </div>    
+    
+    <div id="nav2">        
+              
+        <h2>카페메뉴</h2>
+        <select size="8" style="width: 270px; height: 300px; font-size: 20px;" multiple><br>
+            <option>아메리카노&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1500</option>
+            <option>에스프레소&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1500</option>
+            <option>카페라떼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000</option>
+            <option>카페모카&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2500</option>
+            <option>카라멜마끼아또&nbsp;3000</option>
+            <option>카라멜마끼아또&nbsp;3000</option>
+            <option>카라멜마끼아또&nbsp;3000</option>
+           </select>
+        
+    </div>
+    <div id="sectionMenu2">
+        <div id="reserveRoom">
+            <h2>예약가능한 객실</h2>
+                <h3>백두산 Suite Room 4명</h3>
+            <h3>한라산 Family Room 6명</h3>
+            <h3>설악산 Double Room 4명</h3>
+            <h3>지리산 Single Room 2명</h3>
+            <h3>북한산 Single Room 2명</h3>
+            <h3>태조산 Single Room 2명</h3>
+            <h3>남산 Single Room 2명</h3>
+            </div>
+        <h2>객실이름</h2>
+        <input type="text" value="">
+        <h2>숙박기간</h2>
+        <input type="date">~<input type="date">
+        <h2>숙박인원</h2>
+        <input type="number">
+        <h2>1박요금</h2>
+        <input type="text" id="roomPrice">원
+        <h2>총 숙박비</h2>
+        <input type="text" id="roomSum">원
+        <h2>예약자 모바일</h2>
+        <input type="tel" id="telNum"><br><br><br>
+        <input type="button" id="btnRegister2" value="  추가  ">
+        <input type="button" id="btnDelete2" value="  삭제  ">
+        <input type="button" id="btnClear2" style="height: 24px;"  value="  주문  ">
+    </div>
+    <div id="section2">
+        <h2 style="font-size: 22px;">예약된 객실</h2>
+        <select size="8" style="width: 200px; font-size: 20px;" multiple><br>
+            <option>백두산</option>
+            <option>한라산</option>
+            <option>설악산</option>
+            <option>지리산</option>
+            <option>북한산</option>
+            <option>태조산</option>
+            <option>남산</option>
+           </select>
+    </div>
+    <div id="footer2">       
+    </div>
+</body>
+
+</html>
