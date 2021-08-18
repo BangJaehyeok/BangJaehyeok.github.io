@@ -5,6 +5,78 @@ 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
 
 회의 참가 id : 425 532 9777
 
+#### 20210818 (수) 작업
+- 만약 데이터베이스가 없을때 설치하는 방법 하는 중.
+
+- cmd에서 폴더이동방법 : cd \download
+- 해당 폴더에서 파일 찾는법 : dir *.dmp
+
+- sqlplus에 파일 임포트가 잘 되었는지 확인하는 방법
+- sqlplus -> ora_user/human123으로 로그인
+- select table_name from user_tables;
+- 그래서 9개나 10개의 테이블이 존재하면 된다.
+
+- DBMS(DataBase Management System)
+- DBMS의 기능 = 데이터의 CRUD
+- SQL(Structured Query Language)
+- myts.dbf : 데이터베이스가 저장되는 파일
+- DBMS는 myts.dbf라는 파일을 관리해준다. DBMS프로그램에게 명령을 내리거나 감시하는 프로그램을 SQL이라고한다. SQL로 데이터를 핸들링하거나 한다.
+
+- column : 속성이 같은 것끼리 세로로 쫘아악 정렬한것
+- 테이블 : 데이터가 보관되는 장소
+- row record : 가로로로 하나의 데이터 객체를 가리키는 것.
+- column의 속성을 field라고한다.
+- view : readonly 조회만 가능한 테이블
+- synonym : 별명(nickname/alias)을 붙인 객체
+- index : 테이블데이터를 정리, 검색속도를 증가.
+- sequence : 일련번호를 검색하기위해 사용됨.
+
+- DDL(Data Definition Language) : 데이터정의언어
+- DML(Data Manipulation Language) : 데이터조정언어
+- 배우는건 주로 DML. 데이터를 핸들링하는 것
+
+- SQL : Create Read Update Delete
+- DML : insert select update delete
+- DDL : create/grant/evoke select alter drop/truncate
+
+- 대상 : DML(실제 데이터) DDL(데이터가 담긴 그릇에 관한 정보 즉, 메타데이터)
+
+- create table/index/view/synonym/sequence 등 DDL문으로서, 생성하는 명령.
+- cteate table 이름 (컬럼명1, 타입(길이), 컬럼명2 타입(길이),,,,);
+- varchar : 가변길이 문자열
+
+- create table student(
+student_name VARCHAR2(25),
+mobile varchar2(20),
+gender char(1),
+city varchar2(24)
+);
+
+- student라는 테이블을 생성함. 
+- char라는 타입은 무조건 데이터를 한자리 차지한다. 그 자리가 공백이거나 없다고하더라도 무조건 한자리 차지해서 안쓰는 공간이 낭비된다. 
+- 그러나 varchar2는 가변길이 문자열이기 때문에 빈공간이면 데이터를 차지하지 않는다. 따라서 요즘은 문자열이면 거의 대부분은 varchar2를 사용한다.
+
+- insert into 테이블명 values(값1);
+
+- alter table student modify(city varchar2(24)); -> 테이블student의 city컬럼의 최대값을 24로 수정한다.
+
+- select * from 테이블명 : 모든 칼럼과 칼럼의 값들을 조회한다.
+- select 칼럼명1,칼럼명2,,,,칼럼명N from 테이블명 : 특정칼럼을 보고싶다.
+
+- update student set city='NewYork' where city='N';
+- -> student라는 테이블에서 city컬럼의'N'값을 'NewYork'으로 변경한다.
+- delete from student; => 해당 테이블의 모든 데이터를 삭제한다.
+
+- 테이블 밑에 컬럼들의 이름, 타입들을 정의한 그런 구조들을 스키마(scheme)라고한다. 
+- desc 테이블명; 명령어를 입력하면 출력창에 해당 테이블의 스키마가 나타난다.
+
+- 타입의 종류 : char, varchar2, number(m,n):m:전체길이, n:소수점이하자리수
+- number(5,0) : 0~99,999
+
+- ALTER TABLE TABLE_NAME MODIFY COLUMN_NAME VARCHAR2(4000);
+- -> 해당 table의 컬럼 타입을 변경하는 명령
+
+
 #### 20210817 (화) 작업
 - $.isNumeric(변수):변수가 숫자면 true, 문자열이면 false
 - $.isArray() : 변수면 true, 아니면 false
