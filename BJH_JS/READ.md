@@ -1,6 +1,6 @@
 #### 알아야할 사항
 - 깃헙 커밋암호
-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
+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
 - 커밋암호는 9월 27일까지 유효
 
 회의 참가 id : 425 532 9777
