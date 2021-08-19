@@ -6,6 +6,106 @@ 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
 회의 참가 id : 425 532 9777
 
 #### 20210819 (목) 작업
+- 데이터베이스 본격적인 시작
+- 세로로 한줄을 field/column이라고한다. 열
+- 가로로 한줄을 row/record(행)이라고 한다.
+- 데이터를 추가하면 행이 늘어난다.
+- 테이블구조 => 테이블 스키마 라고 말하는 경우가 많다.
+
+- SQL(Structured Query Language) : 구조화된 질의언어 
+- SQL에서는 작은따옴표 안에있는것만 문자열로 인식한다. 큰따옴표도안됨.
+
+- insert into 테이블명 values (값1,값2,...,값n);
+-> desc를 해서 나온 컬럼명 순서대로 값을 적어야한다.
+- insert into 테이블명(컬럼명1,...,컬럼명N) values(값1,...,값N);
+-> 내맘대로 컬럼명순서를 넣고싶을때 먼저 컬럼명을 지정하고 값을 넣는다.
+- insert into 테이블명 set 컬럼명1=값1,컬럼명2=값2,...,컬럼명N=값N (MySQL에서만 통용)
+
+- 데이터 조회(READ)
+- select 컬럼명1,...,컬럼명N from 테이블명
+- select * from 테이블명;
+
+- select table_name from user_tables;
+- desc 테이블명;
+- select문을 거의 80%이상 쓴다. 익숙해지자.
+
+- delete from 테이블명 => 테이블 내의 실제데이터(데이터)를 날린다. rollback으로 되돌릴 수 있다.
+- drop table 테이블명 => 테이블의 schema(메타데이터)를 날려버린다. rollback으로 되돌릴 수 없음. 위험함.
+진짜진짜 조심해야함. drop이녀석
+
+- update 테이블명 set 컬럼명1=값1,컬럼명2=값2,...,컬럼명N=값N;
+
+- create table total_sell(
+menu_name varchar2(10) 이렇게 create할때 varchar2(10)이면 10바이트라는 뜻이다. 그런데 한글은 한글자가 2바이트라서 한글로는 5글자밖에 못들어간다. 그 이상은 넘쳐서 에러가 뜬다. 그것을 잘 계산해서 길이를 넣자.
+
+문자열 타입 (오라클)char, varchar2, long/(MySQL)char, varchar, text
+정수형 타입 number(N), number
+실수형 타입 number(N,P), number, float
+날짜/시간 타입 date,timestamp(ms)
+
+- create table timetest(nowdate date,nowtime timestamp);
+- insert into timetest values(sysdate, systimestamp);
+=> 보통 위가 정석이지만 위처럼 sysdate, systimestamp를 쓰지않는다.
+
+- create table timetest(created char(10),updated char(19));
+- insert into timetest values('1994-05-05','2021-08-19 12:09:00');
+- select*from timetest;
+=> 위처럼 create하고 insert해주는 것이 현장에서는 더 편리하다.
+
+- LOB(Large OBject) : 매우 큰 오브젝트 : 용량이 큰 영상,이미지파일
+- 그런데 영상,이미지파일을 DB에 넣으면 처리속도가 엄청느려진다.
+- 이미지/동영상을 DB에 저장하는 법 
+- 1. 이미지/동영상 파일이름을 DB테이블에 문자열데이터로 저장
+ ('http://image.human.com/student/img/파일이름.jpg')
+- 2. 실제파일은 http://image.human.com/student/img폴더 안에 저장.
+- 위치정보만 DB에 저장하는 것이 속도가 제일 빠르다.
+
+- update는 데이터값을 수정하는 것이고, alter는 데이터 스키마를 수정하는 것이다.
+- alter table 테이블명 drop 컬럼명
+- alter table 테이블명 add 컬럼명 타입(길이)
+- alter table 테이블명 modify 컬럼명 타입(길이) - 타입/길이만 변경
+- alter table 테이블명 rename 컬럼명old to 컬럼명new - 타입길이는 불변, 컬럼명만 변경
+- alter table 테이블명 change 컬럼명 새컬럼명 타입(길이) - 컬럼명, 타입(길이)도 바꿀 수 있다.
+
+- 문자형 타입 중에 char와 varchar2의 차이는
+- char는 주어진 길이까지 무조건 할당된다. 즉 char(10)인데 값으로 'time'이 들어가면 'time      '이렇게 나머지는 공백처리되어 10칸이 무조건 할당된다.
+- 그러나 varchar2는 주어진 길이에 상관없이 넘치지만 않는다면 주어진 텍스트에 딱 맞게 처리된다. 즉, varchar2(10)이어도 'time'이 들어가면 'time' 딱 4칸만 할당되어 데이터낭비가 줄어든다.
+- char는 생년월일, 주민번호 와 같이 데이터의 길이가 정해져있을때 좋다.
+
+- sequence : 자동번호 생성
+- create sequence 시퀀스명; => 1부터 시작해서 1씩 증가
+- create sequence 시퀀스명 start with 시작값 increment by 2
+ => 시작값부터 시작하여 2씩 증가하는 시퀀스.
+- minivalue 최저값/maxvalue 최고값/ cycle 순환: 최저값에서 최고값으로 가면 다시 설정한 첫값으로 돌아가서 다시 찍힌다.
+- 최고값 설정안하면 쭉쭉쭉 올라간다.
+ - 이렇게 시퀀스를 생성한 후 시퀀스의 갯수를 알고싶으면
+ - select seq_num.currval from dual; 이렇게 치면 알 수 있다.
+ - insert into member values(seq_num.nextval,'Janna','F',26);
+ 이렇게 아이디자리에 seq_num.nextval을 넣으면 시퀀스를 넣어서 숫자가 찍힌다.
+
+- select/update/delete 조건하에서 실행하는 경우가 대부분 <- where문
+- select*from employees where salary>8000;
+=> employees 테이블에서 salary가 8000보다 높은 데이터를 모두 출력하라.
+
+select employee_id,emp_name, salary  from employees  where manager_id=100
+=> manager의 사번이 100번인 모든사람의 이름, 사번, 월급을 조회
+
+select 컬럼들 from 테이블명 where 조건.
+
+월급이 5000불과 같거나 작은 사람들의 이름,월급,입사일자를 조회
+select emp_name, salary, hire_date from employees where salary<=5000;
+
+데이터 수정
+update student set birthday='2000-12-30' where name='John';
+=> student테이블에서 이름이 John인 사람의 생일을 2000-12-30으로 바꿔라.
+
+update student set birthday='1994-05-05' where name='Jacob' or name='Jane'
+update student set birthday='1999-05-05' where city='LosAngeles'
+update student set birthday='1999-05-05' where birthday is null;
+=> null의 값을 조건으로 쓰고싶으면 is null이렇게 써야한다.
+update 테이블명 set 고쳐야할 내용 where 고칠대상의 조건
+
+
 
 #### 20210818 (수) 작업
 - 만약 데이터베이스가 없을때 설치하는 방법 하는 중.
