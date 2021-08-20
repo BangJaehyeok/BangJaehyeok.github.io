@@ -5,6 +5,40 @@ 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
 
 회의 참가 id : 425 532 9777
 
+#### 20210820 (금) 작업
+- update employees set salary=8500 where salary between 5000 and 6000;
+- update employees set salary=8500 where salary>=5000 and salary<=6000;
+- 위와 아래는 같은 뜻이다. salary를 2번 쓰는 대신 between을 써서 간단하게 처리한다.
+
+- 보통 delete를 쓴다면 where조건이 있는지 꼭 확인해야한다. 전체를 다 삭제하는 경우는 드물다.
+- delete from 테이블명 where 조건문
+
+- 컬럼명 변경하기
+- alter table 테이블명 rename column 변경할 컬럼명 to 새로운 컬럼명;
+
+- 데이터의 무결성(Integrity), 일관성(consistency)
+- 예를 들어, select*from employees where salary=0; => 이런것은 쓸모없는 garbage data이다.
+
+- insert에만 where를 쓰지 않는다. 사실 쓸필요없다.
+
+- 데이터 정렬 2가지방법 : 오름차순(작은 순서에서 큰순서로 커진다. or 알파벳순서), 내림차순(점점 숫자가 내려간다. 작아진다. 알파벳의 역순)
+- 이럴때 order by를 쓴다.(오름차순)
+- 예) select employee_id, emp_name,salary from employees order by employee_id; 
+- select * from employees order by hire_date; => 입사를 가장 먼저한 사람 순으로 오름차순 정렬된다.
+
+- 무엇이 클까? 숫자<대문자<소문자 10<100  'a'<'b'  'a'<'ab' 'A'<'a'  '19'<'1a'
+- 'aaaa'<'aaaaa' 'aaa'<'aaa ' 끝에 공백이 있으면 같아보여도 더 크다.
+- 문자열 '19'와 '100'은 '19'가 더 크다. 두번째 문자열이 9가 더 커서그럼. 앞에서부터 한글자씩 비교하다가 차이가 생기면 그담은 고려안함.
+
+- 오름차순 : order by [asc]생략
+- 내림차순 : order by desc ex)select * from student order by city desc;
+- 끝에 desc를 붙여준다. 
+
+- 월급이 5000에서 6000인 사이의 직원의 이름을 내림차순으로 정렬해서 보여주기;
+- select * from employees where salary between 5000 and 6000 order by emp_name desc;
+- where가 먼저 나오고 그다음에 order by를 써준다.
+
+
 #### 20210819 (목) 작업
 - 데이터베이스 본격적인 시작
 - 세로로 한줄을 field/column이라고한다. 열
