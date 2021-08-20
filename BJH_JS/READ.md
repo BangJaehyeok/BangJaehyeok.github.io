@@ -139,7 +139,67 @@ update student set birthday='1999-05-05' where birthday is null;
 => null의 값을 조건으로 쓰고싶으면 is null이렇게 써야한다.
 update 테이블명 set 고쳐야할 내용 where 고칠대상의 조건
 
+- 이름이 David로 시작하는 사람을 찾는 것 like를 사용
+- select*from employees where emp_name like 'David%' order by emp_name;
+- 이름이 ~son으로 끝나는 사람 찾는 방법 like '%son';
+- 이름 중간에 he가 들어가는 사람 찾는 방법 like '%he%';
+- like의 단점 : 조금 느려진다. 문자열에만 사용할 수 있다. 숫자는 안됨.
+- 만약 %가 없다면 like는 그저 =와 같다.
+- %는 0개 이상의 문자들인데, _는 한글자만 찾고싶을때이다. 
+- ex) like 'joh_' joh로 시작하는 4글자 문자열을 찾는 것.
+- Al로 시작하고 n으로 끝나는 사람을 찾는다. => like 'Al%n'
+- 성은 상관없고 공백 후에 L로시작하는사람 -> like '% L%'
+- 이름이 5글자로 이루어지고 D로 시작하는사람 -> like 'D____ %'
 
+- select emp_name,salary from employees where salary in (2000,3000,5000)
+-> salary가 2000,3000,4000인 경우를 출력하는 것이다. 
+- 반대로 not in도 있다.
+- select emp_name,salary from employees where salary in (2000,3000,5000)
+- salary가 2000,3000,5000이 아닌 모든 경우들을 출력하는 것.
+- select * from employees where COMMISSION_PCT is not null; => null이 아닌 모든 것을 구한다. 
+
+- SQL의 모든 함수는 반환값이 있다. 즉, 입력이 있으면 출력도 있다.
+- 숫자함수, 문자함수, 날짜함수, 변환함수가 있다.
+- ABS();
+- 오라클은 반드시 select/from이 같이 있어야한다. from이 빠지면 에러가 난다.
+- 그래서 select abs(-12) from dual; 써야할 테이블이름이 없으면 dual로 처리한다.
+- abs(-12)처럼 출처가 없는 데이터연산을 해야할때 dual;로 처리한다.
+
+- select power(5,3) from dual; 5의 3제곱. power는 제곱을 구한다.
+- sqrt(16) = 4 루트처리한다.
+- mod(10,3) 10을 3으로 나눈 나머지를 구한다. mod는 나머지 구하기.
+- select ceil(10.123), floor(10.123) from dual;
+- ceil()은 주어진 값보다 큰 정수중 가장 작은 정수 즉, 올림처리.
+- floor()는 주어진 값보다 작은 정수중 가장 큰 정수 즉, 내림처리.
+- ceil, floor 모두 정수가 주어지면 그냥 주어진 정수가 출력된다.
+- 이외에도 숫자함수는 많다. ceil, floor, round, trunc, remainer, exp, log...
+
+- 문자함수 : initcap(맨 앞글자만 대문자로 변환), lower(모두 소문자로 변환), upper(모두 대문자로 변환)
+- concat 대신 ||요렇게 쓴다.
+- select employee_id||emp_name from employees; 이렇게하면 정한 컬럼들이 붙어져나온다.
+- substr(컬럼명,시작인덱스,길이) 
+- 오라클은 파스칼언어계열(오라클,SQL,PL/SQL)이기 때문에 인덱스 시작이 0이 아닌 1이다.
+- JS에서 trim은 좌우 공백을 다 없애는 것이었다.
+- SQL에서는 ltrim(좌공백제거) rtrim(우공백제거)이 있다. 만약 양쪽 다 공백을 없애려면 ltrim(rtrim(emp_name)) from employees;이렇게 써야한다.
+- lpad, rpad
+- lpad(컬럼명/문자열,전체길이,채울문자열)
+- select lpad(emp_name,15,'*') from employees; => 컬럼명/문자열의 길이가 주어진 전체길이보다 작으면 왼쪽을 남는만큼 채울 문자열로 채운다.
+- rpad는 오른쪽으로 채운다.
+- replace(컬럼명,두번째문자열,세번째문자열) : 컬럼명/문자열에서 두번째 문자열에 해당하는 부분을 세번째 문자열로 교체
+- select replace(emp_name,' ','-') from employees order by emp_name;
+- instr : 컬럼명, 문자열에서 두번째문자열의 시작하는 인덱스 값을 반환
+- select emp_name,instr(emp_name,'a') from employees order by emp_name;
+
+- 날짜함수 : sysdate,systimestamp,add_months,months_between,round, next_day
+- sysdate만 좀 쓴다. select sysdate from dual; 현재 년/월/일이 뜬다.
+
+- 변환함수 : to_char, to_number, to_date
+- to_char : 문자로 형변환한다. 
+- select to_char(sysdate,'YYYY-MM-DD DAY') from dual; 현재의 날짜를 주어진 문자형식으로 바꾸어 출력한다. 21-08-20 이런 sysdate가 2021-08-20 금요일 이렇게 바뀌어 출력됨.
+- select emp_name, to_char(hire_date,'YYYY-MM-DD DAY') from employees;
+- to_char는 많이 사용한다.
+
+- 반대로 문자열을 숫자로 전환할때는 to_number를 써야한다.
 
 #### 20210818 (수) 작업
 - 만약 데이터베이스가 없을때 설치하는 방법 하는 중.
