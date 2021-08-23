@@ -1,11 +1,121 @@
 #### 알아야할 사항
 - 깃헙 커밋암호
-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
-- 커밋암호는 9월 27일까지 유효
 
-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
 
 회의 참가 id : 425 532 9777
+
+#### 20210823 (월) 작업
+- having은 group by 뒤에 쓰며 group by의 조건을 써준다.
+- select 칼럼명1,...칼럼명N, 집계함수 from 테이블명
+  group by 칼럼명1,...,칼럼명N
+  having 집게함수에 대한 조건
+  order by 칼럼명
+- 어떤 것에 대해 group by를 했으면 select 뒤에도 그만큼 칼럼명을 써줘야한다.
+- 집계함수 : count,distinct,sum,avg,min,max
+
+- 집합 연산자 
+- 합집합 : Union
+- 교집합 : Intersect
+- 차집합 : Minus
+
+- 테이블명 수정 : alter table 이전테이블명 rename to 사용할 테이블명;
+
+- Union 합집합 연산
+select 컬럼명 from 테이블명 where country='한국'
+union select 컬럼명 from 테이블명 where country='일본';
+
+- Minus 차집합 연산(둘이 겹치는것을 제외한 한국의 남은 항목들 출력)
+select goods from goods where country='한국'
+minus
+select goods from goods where country='일본';
+- 일본의 남은 항목을 보고싶으면 한국과 일본의 자리를 바꾸면된다.
+
+- Intersect 교집합 연산
+select goods from goods where country='한국'
+minus
+select goods from goods where country='일본';
+
+- 집합연산자를 쓸때 주의사항, 제한사항
+1. 집합 연산자로 연결되는 각 select문의 컬럼의 갯수와 타입이 각각 일치해야한다. (제일 중요!)
+2. select문을 연결할때 order by 절은 마지막에 붙인다.
+3. BLOB, CLOB, BFILE 타입의 컬럼에 대해서는 연산자를 사용할 수 없다.
+4. UNION, INTERSECT, MINUS 연산자는 LONG형 타입 컬럼에는 사용할 수 없다.(UNION ALL에는 적용 가능)
+
+- JOIN
+- 조인 : 테이블 사이를 연결해준다. where절에서 조인을 설정해준다.
+
+select a.emp_name, b.department_name
+from employees a, departments b
+where a.department_id=b.department_id;
+
+- 여기서 employees와 departments테이블에서 두 테이블에서 공통된 값을 가진 컬럼을 등호 연산자로 연결해 조인 조건에 일치하는 두 컬럼값이 같은 행을 출력하는 것이다. 
+- 즉, join하기 위해서는 where조건에서 두 테이블의 공통된 값을 가진 컬럼을 등호연산자로 연결하는 것이 필수이다!!
+
+select a.emp_name,b.job_title 
+from employees a, jobs b
+where a.job_id=b.job_id;
+
+- employees를 a라고하고, jobs 테이블을 b라고 한다. 그러면 좀더 간편하게 짤 수 있다.
+- employees와 jobs테이블의 공통된 job_id라는 컬럼을 연결시켜 조인했다.
+
+- 내부조인(inner join) 
+1. 동등조인(equi-join) : where조건에서 같다라고 하는 것. 그리고 가장 많이 쓰인다. 거의 80% 이상. 4,5개 이상 테이블을 동등조인으로 묶기도 함.
+2. 세미조인(semi-join) : (in/exists)
+3. Anti-join : != 동등조인의 반대. not equal
+4. self-join : from에 하나의 테이블을 두개쓴다. 즉, 자기자신을 참조하는 것.
+
+- 셀프조인 : 직원들의 이름, 직원들의 id, 직원들의 매니저 이름을 출력. 그런데 매니저 이름을 셀프조인해서 연결,출력한다.
+select a.emp_name, a.employee_id, b.emp_name as manager_name
+from employees a, employees b
+where a.manager_id=b.employee_id;
+여기서 where마지막 b.employee_id(+); 처럼 (+)처리한다면 null값도 출력이된다.
+- 셀프조인 : 게시판의 댓글, 대댓글 처리할때 셀프조인을 이용한다. 
+- 외부조인
+
+- 서브쿼리 : SQL안에 보조로 사용되는 또 다른 SELECT문을 의미한다.
+- select 다음에 있으면 일반 서브쿼리
+- from 뒤에 있으면 인라인 뷰
+- where절 뒤에 있으면 중첩쿼리
+
+- 중첩쿼리 예 : where절에 있는 select문이 먼저 실행된다.
+select count(*) from employees
+where salary>=(select avg(salary) from employees);
+- 이것은 where의 select가 먼저 실행된다. 즉, employees 테이블의 salary 평균을 먼저 구하고 각자의 salary가 평균보다 크거나 같은 데이터의 갯수(count)를 구하라.
+
+- 또다른 중첩쿼리의 예(위와 비슷)
+- select emp_name,salary from employees
+where salary<=(select avg(salary) from employees)
+order by salary desc;
+
+- 제니퍼 왈렌 총무기획부 <- departments테이블과 조인
+- from 뒤에 테이블 이름 추가
+- where 뒤에는 조인조건이 and로 연결돼서 추가.
+
+select a.emp_name,a.department_id,b.department_name
+from employees a, departments b
+where b.department_id 
+in (select department_id from departments where parent_id is null)
+and a.department_id=b.department_id ;
+
+select a.emp_name, b.department_name
+from (select emp_name,department_id from employees) a,
+ (select department_name, department_id from departments where parent_id is null) b
+ where a.department_id=b.department_id;
+
+- 위 두개의 sql문은 똑같은 결과를 출력해낸다. 사람의 개성에 따라 다름.
+- from에다 넣는건 인라인 서브쿼리, where에 넣는건 중첩쿼리
+
+- 서브쿼리와 조인이 섞인 형태 엄청 많이 쓴다. 잘 외워서 잘 써먹도록하자.
+
+- 사번,직원이름,매니저이름,부서명,직위명을 출력하시오.(단, 사번, 직원이름은 employee테이블에, 매니저 이름도 employee테이블에 있는데 employee_id와 같은 속성을 갖는다. 그리고, department_name은 deaprtments테이블, job_title은 jobs테이블에 있다.)
+
+select a.employee_id, a.emp_name, b.emp_name, c.department_name, d.job_title
+from employees a, employees b, departments c, jobs d
+where  a.job_id=d.job_id and a.department_id=c.department_id 
+and a.manager_id=b.employee_id(+)
+order by a.employee_id;
+
+마지막 위에 a.manager_id=b.employee_id(+)를 통해 manager_id가 null값을 가진 데이터까지 join한다. 
 
 #### 20210820 (금) 작업
 - sql문이 길고 자세할수록 나중에 다른 작업이 수월해지고 짧아진다.
@@ -166,7 +276,7 @@ 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
 
 select * from kor_loan_status;
 -- 각 지역별 대출 종류별 합계
-
+select region, gubun,
 #### 20210819 (목) 작업
 - 데이터베이스 본격적인 시작
 - 세로로 한줄을 field/column이라고한다. 열
