@@ -1,6 +1,6 @@
 #### 알아야할 사항
 - 깃헙 커밋암호
-
+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
 
 회의 참가 id : 425 532 9777
 
