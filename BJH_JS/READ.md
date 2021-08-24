@@ -4,6 +4,39 @@ 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
 
 회의 참가 id : 425 532 9777
 
+#### 20210824 (화) 작업
+- 새로 스프링 레거시 프로젝트를 만든다.
+- File - New - Others - Spring - Spring Legacy Project
+- 이름 지정하고 밑에 Spring MVC Project 누르고
+- com.human.app 누르고 프로젝트 생성
+- 그리고 Homecontroller에서 run on server하고
+- 404에러 뜨면 포트번호/app까지 지운다음에 실행해서 잘 나오면 굳
+
+- Windows - properties - general - web browser에 크롬 선택
+- use external web browser
+- 계속 properties - web - JSP Files클릭 - Encoding부분을 ISO 어쩌구/유니코드(UTF-8)로 설정
+- 위의 설정을 하면 한글이 거의 깨지지않고 run on server를 하면 크롬창으로 뜨게한다.
+- 그리고 home.jsp에서 
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+이걸 추가해준다.
+
+- java는 서버프로그램 Homecontroller.java => 기본 서버프로그램 소스
+- resources
+- webapp -> 클라이언트 프로그램
+- 웹앱 안쪽에 views - home.jsp - 기본클라이언트 웹페이지 소스
+
+- Webpage(HTML/CSS/Javascript) + Java Tag지원 => JSP(Java Server Page)
+
+- 예를 들면 controller만드세요 하면 java폴더의 밑에밑에 쭈욱가서 java파일 형식으로 컨트롤러 파일을 생성한다. 
+- 홈컨트롤러도 근본적으로 자바 클래스이다.
+
+- 프로젝트의 환경설정 : 프로그램이 돌아가게하는 환경을 세팅
+- web.xml
+- pom.xml
+- servlet-context.xml
+- root-context.xml
+
+
 #### 20210823 (월) 작업
 - having은 group by 뒤에 쓰며 group by의 조건을 써준다.
 - select 칼럼명1,...칼럼명N, 집계함수 from 테이블명
