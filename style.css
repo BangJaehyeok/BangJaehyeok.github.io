@@ -1,7 +1,7 @@
 /* 객실관리홈페이지 css설정 */
 
 #nav{    
-    width: 30%;
+    width: 31%;
     height: 600px;
     float: left;
     margin-left: 50px;
@@ -21,7 +21,7 @@
     font-size: 20px;
 }
 #section{
-    width: 30%;
+    width: 31%;
     height: 600px;
     text-align: left;
     float: left;
@@ -44,7 +44,7 @@
     background-color: teal;
 }
 #nav2{    
-    width: 30%;
+    width: 31%;
     height: 700px;
     float: left;
     margin-left: 50px;
@@ -59,10 +59,10 @@
     width: 250px;
     padding-left: 10px;
     margin-top: 50px;
-    border: solid 1px black;
+    
 }
 #sectionMenu2{
-    width: 30%;
+    width: 31%;
     height: 700px;
     float: left;
     
@@ -71,7 +71,7 @@
     font-size: 20px;
 }
 #section2{
-    width: 30%;
+    width: 31%;
     height: 700px;
     text-align: left;
     float: left;    
