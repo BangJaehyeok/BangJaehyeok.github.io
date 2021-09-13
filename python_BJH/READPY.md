@@ -68,3 +68,127 @@ else:
     elif 조건2 :
     else:
 - while 조건: break/continue를 쓴다.
+- print (str(i)+'x'+str(j)+"="+str(i*j)) 이렇게 숫자타입에 str을 씌워주면 +를 써도 에러가 안나고 잘 붙어서 출력된다.
+- import math를 해주면 해당 문서 안에서는 math함수를 쓸 수 있다. sqrt같은 것.
+- import math
+i=16
+print(math.sqrt(i)) 이렇게 하면 답은 4.0 출력된다. import math를 안써주면 sqrt를 쓸 수 없다.
+- f-string의 모양은 f와 {}만 알면 됩니다. 문자열 맨 앞에 f를 붙여주고, 중괄호 안에 직접 변수 이름이나 출력하고 싶은것을 바로 넣으면 됩니다.
+f'문자열 {변수} 문자열'
+-  str="BangJaeHyeok"
+- print(f'name is [{str}]')
+- 출력 :  name is [BangJaeHyeok]
+- import math
+- print(f'the value {math.pi:.3f}')
+- 출력 : the value 3.142
+- print문 end
+- print("hello",end=" & ")
+- 파이썬의 출력문은 print를 사용하며 두 개의 옵션을 사용할 수 있습니다.
+- sep=" " 
+ 이 옵션을 이용하게 되면 print문의 출력문들 사이에 해당하는 내용을 넣을 수 있습니다. 기본 값으로는 공백이 들어가 있으며 이를 사용해 원하는 문자를 입력할 수 있습니다.
+- end=" "
+ 이 옵션의 경우 print 문을 이용해 출력을 완료한 뒤의 내용을 수정할 수 있습니다. 기본 값으로는 개행(\n)이 들어가 있으며 이를 사용해 개행을 없애거나 원하는 문자를 입력할 수 있습니다.
+ - i=12
+j=24
+print('i={}, j={}' .format(i,j)) => i=12, j=24
+print('i={1}, j={0}' .format(i,j)) => i=24, j=12
+- 파이썬에서는 곱하기가 반복연산으로도 쓰인다. 단순한 곱하기가 아니라.
+str=5*' '
+str=str+'*'
+print(str) =>   *  
+- 파이썬의 함수는 자바스크립트와 거의 같다. 대신 function이 아닌 def라고 한다.
+- def f1(a,b,c):
+...
+return x
+- 파이썬은 함수 호출전에 함수 정의(선언)가 먼저와야한다.
+- def addBlank(n):
+    return n*' '#n개만큼의 공백을 만드는 함수
+
+for i in range(1,11):
+    print(addBlank(i)+'*')
+- 위처럼 한다면 addBlank라는 함수는 제대로 작동한다.
+- 그러나 파이썬은 위에서 한줄한줄 처리해나가는 인터프리터언어라서
+- 반대로 for가 위고 def addBlank라면 위먼저 해석되기 때문에 함수정의가 먼저 안된다고 인식해서 해당 for문을 돌릴 수 없다.
+
+- List == Array(Javascript), ArrayList(Java)와 같다.
+- Dictionary == Javascript의 Object
+- Tuple, Set은 따로 없다.
+- obj = {key:value1,key2:value2,...,keyN:valueN} 객체형 함수
+- ar=[1,2,3,4,5]
+- ar[0]=1, ar[2]=3
+- l=[]
+l.append(12)
+l.append([1,2,3])
+l.append("My name is BJH")
+for i in l:
+    print(i)
+- 문자열들도 섞여서 l이라는 리스트에 추가된다.
+- 리스트 안에 리스트를 넣어도 된다.
+- l.remove로 리스트 안의 내용을 골라 삭제할 수 있다.
+
+- Tuple(튜플): 리스트와 동일하나, 수정불가. 처음 생성할때만 값지정이 가능하고 그 이후에는 삽입,삭제 등이 불가능하다. 리스트와 다른점은 **수정불가!!
+- remove, append가 불가능하다.
+
+- 기존코딩방식으로 변수간 자리바꿈을 하는것은 임시변수를 만들어서 거기에 값을 넣어두고 바꿔야했다.
+- x=10; y=20;
+- let temp=-1;
+- temp=x;
+- x=y;
+- y=temp;
+- 이렇게 임시변수 temp로 만들어서 값을 넣어두고 바꿔야했다. 그런데 파이썬에서는
+- x=10
+- y=20
+- x,y=y,x
+- x,y=y,x 이렇게 하기만해도 바뀐다!! 혁명!! 와우!!
+
+- Set(집합): 리스트와 동일, 수정가능, 그러나 중복값 불허!!
+- Set은 중복값을 불허하기때문에 index가 없다. 근데 거의 안씀.
+
+- Dictionary(사전) : key, value가 couple(쌍)을 이루고 있다.
+- d1={'name':'BJH','age':28,'city':'CheonAn','mobile':'777'}
+- 위처럼 key,value가 쌍으로 있다. 중복값 허용, 인덱스값 없음(index대신 key허용)
+- value(값)은 중복을 허용하되, key는 중복을 허용하지 않는다.
+- d1={'name':'BJH','age':28,'city':'CheonAn','mobile':'777'}
+- d1['name']='John'
+- d1['salary']='3000'
+- 위처럼 같은 key값을 쓰면 해당 키의 값이 지워지고 새값이 추가된다.즉, 수정
+- 그치만 없는 키값을 넣는다면 추가로 인식하고 새로운 key:value값이 생성된다.
+
+- Java, Javascript에는 Null이라고 있지만 파이썬에는 없다. 대신 None을 쓴다.
+- for i in d1:
+    print(i)
+print(" ")
+for i in d1.values():
+    print(i)
+print(" ")
+for i,j in d1.items():
+    print(i,j)
+- 첫번째 for문은 dictionary의 키값만 출력
+- 두번째 for문은 dictionary의 value값만 출력
+- 세번째 for문은 dictionary의 key,value 모두 출력
+- x=1,2,3,4,5 print(x) ==> (1, 2, 3, 4, 5) x는 튜플이라는 뜻 수정불가.
+- 괄호면 튜플이다.
+
+- 어떤 값을 받아들이고 싶으면 input()을 쓴다. input()은 문자열로 인식된다.
+n=input("숫자를 넣으시오.")
+for i in range(int(n)):
+    print(i)
+이렇게 하면 숫자를 넣으시오가 발현된다. 그리고 숫자를 입력하면 0부터 해당숫자-1까지 출력된다.
+
+- Java: n=Integer.parseInt(str);
+- JS : n=parseInt(str);
+- JS : n=Number(str);
+- PY : n=int(str);
+
+- Java => Scanner s = new Scanner(System.in);
+String str = s.nextLine();
+int n=s.nextInt();
+System.out.println();
+뭔가 값을 받아서 출력하기 위해 해야할 코딩들.
+- PY: n=input()
+print(n)
+파이썬은 매우 간단하다.
+
+- 모듈이라는 a.py파일에서 있는 함수들을 가져다 쓰고싶으면
+- import a 라고 하면 된다.
+- a.f1(m,n)

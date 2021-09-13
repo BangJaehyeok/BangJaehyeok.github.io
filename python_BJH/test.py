@@ -1,8 +1,3 @@
-
-
-# for i in range(2,10):
-#     for j in range(1,10):
-#         print (str(i)+'x'+str(j)+"="+str(i*j))
-
-
-
+n=input("숫자를 넣으시오.")
+for i in range(int(n)):
+    print(i)
