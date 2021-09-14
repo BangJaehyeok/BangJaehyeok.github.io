@@ -1,3 +1,105 @@
+#### 20210914(화) 작업
+- 프로그래밍 언어의 조건 : 제어구조, 변수사용, 알고리즘 구현
+- R언어 <- 통계전용언어 with BigDATA(최소 1TB)
+- SPSS : 통계데이터분석프로그램(프로그래밍기능X)
+- R언어+Python = 금상첨화 서로 잘 호환됨. but 프로그래머보단 수학적인 학자들을 위한 ㄹㅇ 통계학적 언어들.
+- ADAP(통계분석사) : 회귀분석,표준분포,추정치가설
+- 파이썬 : 프로그래밍범용언어
+- R언어 : 통계분석전용언어
+
+- 자료구조(Data Structure)
+- 파일입출력
+- Word Cloud, Graph
+
+- 책 24페이지에 나오는대로 R언어를 다운받기.
+- R core = Engine
+- RStudio도 설치해야한다. sql디벨로퍼 같은 존재.
+- rstudio.com에 들어가서 무료버전을 다운받고 설치한다.
+
+- n=10 n이라는 메모리공간에 10이란 값을 넣는다.
+- R언어에서는 n=10이 아니라 n<-10 이렇게 표현한다.
+- 즉, 숫자데이터 10을 n변수에 할당한다.라는 뜻.
+- R언어는 배열형태의 데이터구조가 기본이다. 하나의 변수에 배열과 비슷한 데이터구조가 할당된다.
+- install.packages('패키지명') -> R언어 통제하에 있는 폴더에 다운로드,설치
+- library("패키지명") -> R스튜디오 안으로 load됨(R studio시작시마다).
+
+- 단일형 : 한가지 데이터타입
+- 다중형 : 여러가지 데이터타입이 동시에 들어감.
+- 1차원(선), 2차원(면), 3차원(부피가 있다)
+- 벡터-> 데이터 프레임
+- 데이터프레임(표처럼 생김) : data.frame(변수명1,변수명2,...,변수명N)
+- 데이터프레임 생성 전에 미리 변수명들을 정의해야한다.
+- df<-data.frame(id,gender,age,area) 각각의 변수명을 지정하고, 데이터프레임을 생성한 후, df라는 변수에 집어넣는다.
+- View(df)하면 생성한 데이터프레임을 표처럼 볼 수 있다.
+
+- str()함수는 java처럼 문자열이 아니라 structure 즉, 구조를 보여주는 함수이다.
+
+- 외부파일의 데이터를 읽어들이기
+- Excel, text, CSV(콤마로 구분된 텍스트파일)
+- R데이터의 확장자는 .rda이다.
+- 외부 엑셀파일을 읽기위해서는 외부 패키지를 설치하고 패키지를 로드해야한다.
+- install.packages("readxl") <-외부패키지 설치
+- library(readxl) : 패키지로드
+- excel<-read_excel("C:/Users/Family/Documents/RStudy/source/data_ex.xls")
+- 여기서 주의할 점은 폴더경로를 입력할때 역슬래시를 모두 슬래시로 바꿔줘야한다.
+
+- 텍스트파일 읽기(탭으로 분리된 텍스트파일)
+- txtdata<-read.table("C:/Users/Family/Documents/RStudy/source/data_ex.txt")
+
+- 텍스트파일 읽기(콤마로 분리)
+- d1<-read.table("C:/Users/Family/Documents/RStudy/source/data_ex1.txt",sep=',')
+- 뒤에 sep=','를 붙여 콤마로 분리되었다는걸 인식시킴
+
+- 그런데 컬럼이 되어야할 것까지 내용이 되어버림. 그래서 뒤에 header = TRUE를 넣으면 맨 첫줄이 Head가 되어 컬럼이 된다.
+- 첫줄을 Header로 간주할것인가 아닌가 Header=TRUE/FALSE 다 대문자로 해야 인식함.
+- sep=',' 컬럼분리자
+- skip = N : 처음부터 n줄을 건너띄고 나머지를 읽는다.
+- nrows=N : 처음부터 n줄을 읽고 나머지는 안읽는다.
+- 해당 불러오기는 File메뉴의 임포트에서 다양하게 임포트해올 수도 있다.(더 간단)
+- r언어의 저장 확장자는 .rda이다.
+
+- rda파일포맷으로 저장
+- save()를 이용한다. save(데이터프레임명,file="저장경로/파일이름")
+- csv파일 포맷으로 보관
+- write.table(데이터프레임명,file="저장경로/파일이름")
+- txt파일 포맷으로 보관
+- write.table(데이터프레임명,file="저장경로/파일이름")
+
+- 데이터분석 연산자
+- +-*/ 이건 같다. 사칙연산
+- 근데 나머지는 %% 이고, 몫은 %/% 이다.
+- 제곱은 **또는 ^
+
+- 비교연산 : ==,!=,>,<,>=...
+- 논리연산 : &(and), |(or)
+
+- View(데이터세트명) : View창을 통해 데이터세트의 데이터 확인
+- str() : 데이터 구조 보기
+- dim() : 데이터 행/열의 갯수 확인
+- ls() : 데이터세트의 변수명들을 확인
+
+- 변수명을 즉, 컬럼명을 바꾸고 싶으면 새로운 라이브러리를 깔아야한다.
+- install.packages("dplyr") 이거하고 library(dplyr) 이렇게해서 호출한다.
+- 그리고 exdata1<-rename(exdata1,Y17_AMT=AMT17,Y16_AMT=AMT16,GENDER=SEX)
+- 주의할점은 새변수명=기존변수명 이다. 새로 지정할 변수명을 먼저 써줘야한다. 
+
+- 새로운 컬럼 추가
+- exdata1$amt <- exdata1$Y17_AMT + exdata1$Y16_AMT
+- exdata1의 변수중($) amt를 만든다. 그 amt의 속성은 exdata1의 변수중 Y17_amt와 y16_amt를 더한 것이다.
+
+- 조건을 달아서 컬럼,변수명을 추가
+- exdata1$AGE50_YN<-ifelse(exdata1$AGE>=50,"Y","N")
+- AGE50_YN을 새로 만드는데 AGE변수에서 50이 넘는 변수는Y,아니면 N처리하라.
+
+- DB의 select에 해당하는 것 -> select()
+- DB의 where에 해당하는 것 -> filter()
+- exdata1 %>% select(ID) ID만 추출해서 보여줌
+- exdata1 %>% select(ID,AREA,Y17_CNT)묶어서 보여줄수도 있음
+- exdata1 %>% select(-AREA) 빼고싶은걸 빼고 나머지 보여줌
+- exdata1 %>% filter(AREA=='서울') 서울만 골라냄
+- exdata1 %>% filter(AREA=='서울') %>% select(-ID,-GENDER) 서울인것만 filter하고 거기서 ID와 GENDER를 뺀다.
+
+
 #### 20210913(월) 작업
 - Phthon.org에 접속 -> download -> 3.9.7버전을 다운로드
 - Add Python.3.9.PATH를 체크하고 설치함
