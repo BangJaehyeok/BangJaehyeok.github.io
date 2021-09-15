@@ -1,3 +1,44 @@
+#### 20210915(수) 작업
+- exdata1 %>% arrange(AGE) : AGE라는 컬럼변수의 오름차순으로 정렬한다.
+- exdata1 %>% arrange(AGE,Y17_AMT) AGE순으로 하되, AGE가 같으면 Y17_AMT순으로 오름차순으로 나눈다.
+- exdata1 %>% arrange(-AGE) 내림차순은 해당변수에 -를 붙여준다.
+내림차순 혹은 arrange(desc(변수))하면 내림차순된다.
+- exdata1 %>% summarise(TOT_Y17_AMT=sum(Y17_AMT))
+- TOT_Y17_AMT라는 변수에 모든 Y17_AMT 값의 합을 넣어라.
+
+- exdata1 %>% group_by(AREA) %>% summarise(SUM_Y17_AMT=sum(Y17_AMT))
+- AREA별로 그룹화한다음, Y17_AMT한걸 다 더해봐라 즉, 그룹별 합계.
+
+- 결측값 : None이 나오는 값. 데이터가 없는 것.
+- mean() : 평균값
+- median() : 중위값
+
+- 막대그래프 그리는 방법
+- hist(exdata1$AGE) hist()명령어를 이용하면 막대그래프를 그릴 수 있다. 대신 변수는 숫자데이터로 입력해야한다.
+- hist(data1$Y17_AMT,xlim=c(0,2000000),ylim=c(0,5.0),main='대출분포') Y17_AMT변수에서 x와 y의 범위값을 정할 수도 있다. main은 대출분포라고 제목을 지어준다.
+
+- install.packages('descr')
+- library(descr)
+위처럼 설치와 임포트를 해주면
+- freq(exdata1$GENDER) 숫자데이터 뿐만 아니라 freq()를 사용해 빈도데이터로 그래프를 그릴 수 있다.
+
+- freq(exdata1$GENDER,plot=T,main='성별')
+exdata1$GENDER 
+      Frequency Percent
+F             6      60
+M             4      40
+Total        10     100
+그리고 빈도분석 막대그래프도 출력된다.
+
+- barplot은 설치,임포트 필요없이 바로 막대그래프를 그릴 수 있는 명령어이다. 대신 변수를 지정해줘야한다.
+- dist_gender<-table(exdata1$GENDER)
+이렇게 table을 미리 정해주고 변수정해준다.
+- barplot(dist_gender,main = 'BARPLOT',ylim=c(0,10),xlab='성별',ylab='인원수',names=c('여성','남성'),col=c('red','blue'))
+- 그리고 이렇게 변수이름과 값을 지정해줘서 그래프를 그린다.
+
+- boxplot(exdata1$Y17_CNT,exdata1$Y16_CNT,ylim=c(0,60),main='상자그래프',names=c('17년건수','16년건수'),col=c('green','yellow'))
+- col는 왼쪽부터 이름붙여준다. names도 그렇다.
+
 #### 20210914(화) 작업
 - 프로그래밍 언어의 조건 : 제어구조, 변수사용, 알고리즘 구현
 - R언어 <- 통계전용언어 with BigDATA(최소 1TB)
